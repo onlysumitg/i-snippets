@@ -1,0 +1,66 @@
+{
+
+    //--------------------------- create table
+    "create table": {
+        "scope": "sql, sqltab",
+        "prefix": ["create", "table"],
+        "isFileTemplate": true,
+        "body": [
+         
+
+        ],
+        "description": "Create table template"
+    },
+
+
+    //---------------------------  create procedure
+    "create procedure": {
+        "scope": "sql",
+        "prefix": ["create", "procedure"],
+        "isFileTemplate": true,
+        "body": [
+         
+
+        ],
+        "description": "Create procedure template"
+    },
+
+    //---------------------------  create function
+    "create function": {
+        "scope": "sql",
+        "prefix": ["create", "function"],
+        "isFileTemplate": true,
+        "body": [
+         
+
+        ],
+        "description": "Create function template"
+    },
+     
+
+    //---------------------------  create view
+    "create view": {
+        "scope": "sql, sqltab",
+        "prefix": ["create", "view"],
+        "isFileTemplate": false,
+        "body": [
+         
+
+        ],
+        "description": "Create view template"
+    },
+     
+    //---------------------------  create index
+
+    "create index": {
+        "scope": "sql, sqltab",
+        "prefix": ["create", "index"],
+        "isFileTemplate": false,
+        "body": [
+         
+
+        ],
+        "description": "Create index template"
+    },
+     
+}

@@ -1,0 +1,551 @@
+{
+
+    "Rpgle Free template": {
+        "scope": "rpg,rpgle,sqlrpgle",
+        "prefix": ["rpgle", "free"],
+        "isFileTemplate": true,
+        "body": [
+            "**free",
+            "//---------------------------------------------",
+            "// Description...: ",
+            "// Creation Date.: $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE",
+            "// Create by.....: ",
+            "//---------------------------------------------",
+            " ",
+            "//---------------------------------------------",
+            "// Modification logs",
+            "//---------------------------------------------",
+            "// Task     Date     Programmer     Description",
+            "//---------------------------------------------",
+            " ",
+            "//---------------------------------------------",
+            "Ctl-opt main(main)",
+            " ",
+            "//---------------------------------------------",
+            "// Main program prototype ",
+            "//---------------------------------------------",
+            "dcl-pr Main ExtPgm('${1:${TM_FILENAME_BASE/([^\\.]+).*/${1:/upcase}/}}'); ",
+            " ",
+            "end-pr;",
+            " ",
+            "//---------------------------------------------",
+            "// Main program interface ",
+            "//---------------------------------------------",
+            "dcl-proc Main; ",
+            "\tdcl-pi main;",
+            " ",
+            "\tend-pi",
+
+            "",
+            "\texsr $initialize;",
+            "\texsr $process;",
+            "\texsr $finalize;",
+           
+           
+            "",
+            "//---------------------------------------------",
+            "// $initialize: setup program",
+            "//---------------------------------------------",
+            "begsr\t$initialize;",
+			"\t//TODO",
+			"endsr;",
+
+            "",
+            "//---------------------------------------------",
+            "// $process: main processing logic",
+            "//---------------------------------------------",
+            "begsr\t$process;",
+			"\t//TODO",
+			"endsr;",
+
+            "",
+            "//---------------------------------------------",
+            "// $finalize: program cleanup",
+            "//---------------------------------------------",
+            "begsr\t$finalize;",
+			"\t//TODO",
+            "\t*InLR = *On;",
+			"endsr;",            
+            "",
+            
+            "end-proc;$0",
+
+        ],
+        "description": "Basic template from RPG FREE program"
+    },
+
+
+    "Rpgle Free hello world": {
+        "scope": "rpg,rpgle,sqlrpgle",
+        "prefix": ["hello","world", "free"],
+        "isFileTemplate": true,
+        "body": [
+            "**free",
+            "//---------------------------------------------",
+            "// Description...: ",
+            "// Creation Date.: $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE",
+            "// Create by.....: ",
+            "//---------------------------------------------",
+            " ",
+            "//---------------------------------------------",
+            "// Modification logs",
+            "//---------------------------------------------",
+            "// Task     Date     Programmer     Description",
+            "//---------------------------------------------",
+            " ",
+            "//---------------------------------------------",
+            "Ctl-opt main(main)",
+            " ",
+            "//---------------------------------------------",
+            "// Main program prototype ",
+            "//---------------------------------------------",
+            "dcl-pr Main ExtPgm('${1:${TM_FILENAME_BASE/([^\\.]+).*/${1:/upcase}/}}'); ",
+            " ",
+            "end-pr;",
+            " ",
+            "//---------------------------------------------",
+            "// Main program interface ",
+            "//---------------------------------------------",
+            "dcl-proc Main; ",
+            "\tdcl-pi main;",
+            " ",
+            "\tend-pi",
+
+            "",
+            "\texsr $initialize;",
+            "\texsr $process;",
+            "\texsr $finalize;",
+           
+           
+            "",
+            "//---------------------------------------------",
+            "// $initialize: setup program",
+            "//---------------------------------------------",
+            "begsr\t$initialize;",
+			"\t//TODO",
+			"endsr;",
+
+            "",
+            "//---------------------------------------------",
+            "// $process: main processing logic",
+            "//---------------------------------------------",
+            "begsr\t$process;",
+			"\tdsply 'Hello world!,",
+			"endsr;",
+
+            "",
+            "//---------------------------------------------",
+            "// $finalize: program cleanup",
+            "//---------------------------------------------",
+            "begsr\t$finalize;",
+			"\t//TODO",
+            "\t*InLR = *On;",
+			"endsr;",            
+            "",
+            
+            "end-proc;$0",
+
+        ],
+        "description": "Basic template from RPG FREE program"
+    },
+
+
+    "Zoned Free": {
+        "scope": "rpg,rpgle,sqlrpgle",
+        "prefix": ["zoned", "free"],
+        "isFileTemplate": false,
+        "body": ["dcl-s ${1:variable}\tzoned(${2:5}:${3:0})\tinz;$0"],
+       //"body": ["${TM_CURRENT_LINE/.*/y/g}"],
+        "description": "Declare a standalone zoned variable"
+    },
+
+    "Packed Free": {
+        "scope": "rpg,rpgle,sqlrpgle",
+        "prefix": ["packed", "free"],
+        "isFileTemplate": false,
+        "body": ["dcl-s ${1:variable}\tpacked(${2:5}:${3:0})\tinz;$0"],
+        "description": "Declare a standalone packed variable"
+    },
+
+    "Int Free": {
+        "scope": "rpg,rpgle,sqlrpgle",
+        "prefix": ["int", "free"],
+        "isFileTemplate": false,
+        "body": ["dcl-s ${1:variable}\tint(${2:3}})\tinz;$0"],
+        "description": "Declare a standalone integer variable"
+    },
+
+    "Uns Free": {
+        "scope": "rpg,rpgle,sqlrpgle",
+        "prefix": ["uns", "free"],
+        "isFileTemplate": false,
+        "body": ["dcl-s ${1:variable}\tuns(${2:3}})\tinz;$0"],
+        "description": "Declare a standalone unsigned integer variable"
+    },
+
+
+    "Float Free": {
+        "scope": "rpg,rpgle,sqlrpgle",
+        "prefix": ["float", "free"],
+        "isFileTemplate": false,
+        "body": ["dcl-s ${1:variable}\tfloat(${2:8}})\tinz;$0"],
+        "description": "Declare a standalone float variable"
+    },
+
+
+    "Char Free": {
+        "scope": "rpg,rpgle,sqlrpgle",
+        "prefix": ["char", "free"],
+        "isFileTemplate": false,
+        "body": ["dcl-s ${1:variable}\tchar(${2:1})\tinz;$0"],
+        "description": "Declare a standalone char variable"
+    },
+
+    "CLOB Free": {
+        "scope": "rpg,rpgle,sqlrpgle",
+        "prefix": ["clob", "free"],
+        "isFileTemplate": false,
+        "body": ["dcl-s ${1:variable}\tSQLTYPE(CLOB:${2:1048576)\tinz;$0"],
+        "description": "Declare a standalone SQLTYPE CLOB variable"
+    },
+    "Date Free": {
+        "scope": "rpg,rpgle,sqlrpgle",
+        "prefix": ["date", "free"],
+        "isFileTemplate": false,
+        "body": ["dcl-s ${1:variable}\tdate(${2:*iso})\tinz;$0"],
+        "description": "Declare a standalone date variable"
+    },
+
+    "ISO date Free": {
+        "scope": "rpg,rpgle,sqlrpgle",
+        "prefix": ["iso", "date", "free"],
+        "isFileTemplate": false,
+        "body": ["dcl-s ${1:variable}\tdate(*iso)\tinz;$0"],
+        "description": "Declare a standalone date (date format iso) variable"
+    },
+
+    "USA date Free": {
+        "scope": "rpg,rpgle,sqlrpgle",
+        "prefix": ["usa", "date", "free"],
+        "isFileTemplate": false,
+        "body": ["dcl-s ${1:variable}\tdate(*usa)\tinz;$0"],
+        "description": "Declare a standalone date (date format usa) variable"
+    },
+
+
+    "Indicator Free": {
+        "scope": "rpg,rpgle,sqlrpgle",
+        "prefix": ["indicator", "ind", "free"],
+        "isFileTemplate": false,
+        "body": ["dcl-s ${1:variable}\tind\tinz;$0"],
+        "description": "Declare a standalone Indicator variable"
+    },
+
+
+    "Pointer Free": {
+        "scope": "rpg,rpgle,sqlrpgle",
+        "prefix": ["pointer", "free"],
+        "isFileTemplate": false,
+        "body": ["dcl-s ${1:variable}\tpointer;$0"],
+        "description": "Declare a standalone pointer"
+    },
+
+    "Array Free": {
+        "scope": "rpg,rpgle,sqlrpgle",
+        "prefix": ["array", "free"],
+        "isFileTemplate": false,
+        "body": ["dcl-s ${1:variable}\t${2:char}(${3:1})\tdim(${4:10})\tinz;$0"],
+        "description": "Declare a standalone Char array"
+    },
+
+    //   "Char Array Free": {
+    //     "scope": "rpg,rpgle,sqlrpgle",
+    //     "prefix": ["chararray", "array",   "free"],
+    //     "isFileTemplate": false,
+    //     "body": ["dcl-s ${1:variable}\tchar(${2:1})\tdim(${3:10})\tinz;$0" ],
+    //     "description": "Declare a standalone Char array"
+    //   },
+    "Dataarea Free": {
+        "scope": "rpg,rpgle,sqlrpgle",
+        "prefix": ["dataarea", "free"],
+        "isFileTemplate": false,
+        "body": ["dcl-s ${1:variable}\t${2:char}(${3:1})\tdtaara('${4:data_area}');$0"],
+        "description": "Declare a standalone Char array"
+    },
+
+
+    "Data structure Free": {
+        "scope": "rpg,rpgle,sqlrpgle",
+        "prefix": ["ds", "free"],
+        "isFileTemplate": false,
+        "body": ["dcl-ds ${1:*N} ;",
+                "\t${2:subfield1}\t${3:char}(${4:10});" ,
+                "end-ds;"
+            ],
+        "description": "Declare a standalone Char array"
+    },
+
+    "External Data structure Free": {
+        "scope": "rpg,rpgle,sqlrpgle",
+        "prefix": ["external","ds", "free"],
+        "isFileTemplate": false,
+        "body": ["dcl-ds ${1:*N} ;",
+                "\textname('${2:table_name}') qualified;" ,
+                "end-ds;"
+            ],
+        "description": "Declare a standalone Char array"
+    },
+
+
+    "Constant free": {
+        "scope": "rpg,rpgle,sqlrpgle",
+
+        "prefix": ["Constant","const", "free"],
+		"body": ["dcl-c\t${1:name}\t${2:value};$0"],
+		"description": "Declare constant",
+	},
+    //--------------------------- RPG flow control ----------------------------------------
+    "If free": {
+        "prefix": ["if", "free"],
+        "scope": "rpg,rpgle,sqlrpgle",
+
+		"body": [
+			"if\t(${1});",
+			"\t//TODO",
+            "else;",
+            "\t//TODO",
+            "endif;"
+		],
+		"description": "If block"
+	},
+	"Dow loop free": {
+		"prefix": ["dow", "free"],
+		"description": "Do while loop",
+        "scope": "rpg,rpgle,sqlrpgle",
+
+		"body": [
+			"dow\t(${1});",
+			"\t$0",
+			"enddo;"
+		]
+	},
+	"Dou loop free": {
+        "prefix": ["dou", "free"],
+		"description": "Do until loop",
+        "scope": "rpg,rpgle,sqlrpgle",
+
+		"body": [
+			"dou\t(${1});",
+			"\t$0",
+			"enddo;"
+		]
+	},
+	"For loop free": {
+        "prefix": ["for", "free"],
+		"description": "For loop",
+        "scope": "rpg,rpgle,sqlrpgle",
+
+		"body": [
+			"for\t${1:index} = ${2:startingValue} ${3|to,downto|} ${4:endingValue} by ${5:1};",
+			"\t$0",
+			"endfor;"
+		]
+	},
+
+
+    "Select Free": {
+		"prefix": "select",
+		"description": "RPG Select statement",
+        "scope": "rpg,rpgle,sqlrpgle",
+
+		"body": [
+			"select;",
+			"\twhen (${1});",
+			"\t\t$0",
+			"\tother;",
+			"\t\t//TODO",
+			"endsl;"
+		]
+	},    
+    //--------------------------- RPG prototypes ----------------------------------------
+	"QCMDEXE free": {
+        "prefix": ["qcmdexe","clcmd", "free"],
+        "scope": "rpg,rpgle,sqlrpgle",
+
+		"body": [
+			 
+		],
+		"description": "Define QCMDEXE prototype"
+	},
+
+ 	"SYSTEM free": {
+        "prefix": ["system","clcmd", "free"],
+        "scope": "rpg,rpgle,sqlrpgle",
+
+		"body": [
+	 
+		],
+		"description": "Define SYSTEM prototype"
+	},
+    
+
+    // run cl command
+    // 
+
+
+    //--------------------------- RPG CODE blocks ----------------------------------------
+	"Subroutine free": {
+        "prefix": ["begsr", "free"],
+        "scope": "rpg,rpgle,sqlrpgle",
+
+		"body": [
+			"begsr\t$1;",
+			"\t//TODO",
+			"endsr;"
+		],
+		"description": "Define subroutine"
+	},
+
+
+    "Monitor free": {
+        "prefix": ["mon","monitor", "free"],
+        "scope": "rpg,rpgle,sqlrpgle",
+
+        "body": [
+			"monitor;",
+            "\t//TODO",
+			"on-excp '';",
+			"on-error;",
+            "\t//TODO",
+			"endmon;"
+		],
+		"description": "Define monitor Block"
+	},
+
+    "Current date free": {
+        "prefix": ["today","current", "free"],
+        "scope": "rpg,rpgle,sqlrpgle",
+
+        "body": [
+			"today = %date();",
+		],
+		"description": "Get current date"
+	},
+
+
+    "Current time free": {
+        "prefix": ["now","current", "free"],
+        "scope": "rpg,rpgle,sqlrpgle",
+
+        "body": [
+			"now = %time();",
+		],
+		"description": "Get current time"
+	},
+
+
+
+    //--------------------------- RPG Casting blocks ----------------------------------------
+
+    "Cast Char to decimal free": {
+        "prefix": ["cast", "free"],
+        "scope": "rpg,rpgle,sqlrpgle",
+
+        "body": [
+            "monitor;",
+            "\t${1:decimal_field}= %dec(${2:char_field}:${3:5}:${4:0});",
+			"on-excp '';",
+			"on-error;",
+            "\t${1:decimal_field}=0;",
+			"endmon;"
+		],
+		"description": "Get current time"
+	},
+
+    "Cast Char to Date free": {
+        "prefix": ["cast", "free"],
+        "scope": "rpg,rpgle,sqlrpgle",
+
+        "body": [
+            "monitor;",
+            "\t${1:date_field}= %date(${2:char_field}: ${3|*ISO,*USA|);",
+			"on-excp '';",
+			"on-error;",
+            "\t//TODO",
+			"endmon;"
+		],
+		"description": "Get current time"
+	},
+    //--------------------------- SQL ----------------------------------------
+    "SQL Select": {
+        "prefix": ["sql","select", "free"],
+        "scope": "rpg,rpgle,sqlrpgle",
+
+		"body": ["exec SQL",
+                  "\tselect ${1:column}",
+                  "\t  into :${1:host_variable}",
+                  "\t  from ${2:table_name}",
+                  "\t where ${3:where_condition}",
+                  "\t limit 1;",
+                  "",
+                  "if sqlcode <> 0;",
+                  "\t//TODO",
+                  "endif;",
+                  "",
+
+                ],
+		"description": "SQL select statement",
+	},
+
+    "SQL Update": {
+        "prefix": ["sql","update", "free"],
+        "scope": "rpg,rpgle,sqlrpgle",
+
+		"body": ["exec SQL",
+                  "\tupdate ${1:table_name}",
+                  "\t   set ${2:column}=:${2:host_variable}",
+                  "\t where ${3:where_condition};",
+                  "",
+                  "if sqlcode <> 0;",
+                  "\t//TODO",
+                  "endif;",
+                  "",              
+                ],
+		"description": "SQL update statement",
+	},
+
+    "SQL cursor": {
+        "prefix": ["sql","cursor", "free"],
+		"description": "SQL cursor",
+        "scope": "rpg,rpgle,sqlrpgle",
+		"body": [
+			 
+			"EXEC SQL",
+			"\tDECLARE @$1 CURSOR FOR",
+			"\t\tSELECT ${2:column} FROM ${1:table_name}",
+			"\t\tWHERE  ${3:column} = :${3:host_variable}",
+
+
+			"EXEC SQL",
+			"\tOPEN @$1;",
+			"if sqlcode <> 0;",
+            "\t//TODO",
+			"endif;",
+            "",
+
+			"EXEC SQL",
+			"\tFETCH NEXT FROM @$1 INTO :${2:host_variable};",
+			"",
+
+			"Dow sqlcode = 0;",
+			"\t//TODO",
+			"\tEXEC SQL",
+            "\t\tFETCH NEXT FROM @$1 INTO :${2:host_variable};",
+			"ENDDO;",
+			"",
+
+			"EXEC SQL",
+			"  CLOSE @$1;",
+		]
+	},
+}

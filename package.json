@@ -1,0 +1,36 @@
+{
+  "name": "i-snippets",
+  "displayName": "IBM i code Snippets",
+  "description": "code snippets for IBM i languages like RPG RPGLE CL CLLE SQL",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.86.0"
+  },
+  "categories": [
+    "Snippets"
+  ],
+  "contributes": {
+    "snippets": [
+      {
+        "language": "rpg",
+        "path": "./snippets/rpgle.code-snippets"
+      },
+      {
+        "language": "rpgle",
+        "path": "./snippets/rpgle.code-snippets"
+      },
+      {
+        "language": "sqlrpgle",
+        "path": "./snippets/rpgle.code-snippets"
+      },
+      {
+        "language": "sql",
+        "path": "./snippets/sql.code-snippets"
+      },
+      {
+        "language": "sqltab",
+        "path": "./snippets/sql.code-snippets"
+      }
+    ]
+  }
+}
