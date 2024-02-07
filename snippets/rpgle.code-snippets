@@ -2,7 +2,7 @@
 
     "Rpgle Free template": {
         "scope": "rpg,rpgle,sqlrpgle",
-        "prefix": ["rpgle", "free"],
+        "prefix": ["rpgle free template"],
         "isFileTemplate": true,
         "body": [
             "**free",
@@ -77,7 +77,7 @@
 
     "Rpgle Free hello world": {
         "scope": "rpg,rpgle,sqlrpgle",
-        "prefix": ["hello","world", "free"],
+        "prefix": ["rpgle free hello world"],
         "isFileTemplate": true,
         "body": [
             "**free",
@@ -152,7 +152,7 @@
 
     "Zoned Free": {
         "scope": "rpg,rpgle,sqlrpgle",
-        "prefix": ["zoned", "free"],
+        "prefix": ["dcl-s zoned free","declare zoned free"],
         "isFileTemplate": false,
         "body": ["dcl-s ${1:variable}\tzoned(${2:5}:${3:0})\tinz;$0"],
        //"body": ["${TM_CURRENT_LINE/.*/y/g}"],
@@ -161,7 +161,7 @@
 
     "Packed Free": {
         "scope": "rpg,rpgle,sqlrpgle",
-        "prefix": ["packed", "free"],
+        "prefix": ["dlc-s packed free","declare packed free"],
         "isFileTemplate": false,
         "body": ["dcl-s ${1:variable}\tpacked(${2:5}:${3:0})\tinz;$0"],
         "description": "Declare a standalone packed variable"
@@ -169,7 +169,7 @@
 
     "Int Free": {
         "scope": "rpg,rpgle,sqlrpgle",
-        "prefix": ["int", "free"],
+        "prefix": ["dcl-s int free","declare int free"],
         "isFileTemplate": false,
         "body": ["dcl-s ${1:variable}\tint(${2:3}})\tinz;$0"],
         "description": "Declare a standalone integer variable"
@@ -177,7 +177,7 @@
 
     "Uns Free": {
         "scope": "rpg,rpgle,sqlrpgle",
-        "prefix": ["uns", "free"],
+        "prefix": ["dcl-s uns free","declare unsigned int free"],
         "isFileTemplate": false,
         "body": ["dcl-s ${1:variable}\tuns(${2:3}})\tinz;$0"],
         "description": "Declare a standalone unsigned integer variable"
@@ -186,7 +186,7 @@
 
     "Float Free": {
         "scope": "rpg,rpgle,sqlrpgle",
-        "prefix": ["float", "free"],
+        "prefix": ["dcl-s float free","declare float free"],
         "isFileTemplate": false,
         "body": ["dcl-s ${1:variable}\tfloat(${2:8}})\tinz;$0"],
         "description": "Declare a standalone float variable"
@@ -195,7 +195,7 @@
 
     "Char Free": {
         "scope": "rpg,rpgle,sqlrpgle",
-        "prefix": ["char", "free"],
+        "prefix": ["dcl-s char free","declare char free"],
         "isFileTemplate": false,
         "body": ["dcl-s ${1:variable}\tchar(${2:1})\tinz;$0"],
         "description": "Declare a standalone char variable"
@@ -203,14 +203,14 @@
 
     "CLOB Free": {
         "scope": "rpg,rpgle,sqlrpgle",
-        "prefix": ["clob", "free"],
+        "prefix": ["dcl-s clob free","declare clob free"],
         "isFileTemplate": false,
         "body": ["dcl-s ${1:variable}\tSQLTYPE(CLOB:${2:1048576)\tinz;$0"],
         "description": "Declare a standalone SQLTYPE CLOB variable"
     },
     "Date Free": {
         "scope": "rpg,rpgle,sqlrpgle",
-        "prefix": ["date", "free"],
+        "prefix": ["dcl-s date free","declare date free"],
         "isFileTemplate": false,
         "body": ["dcl-s ${1:variable}\tdate(${2:*iso})\tinz;$0"],
         "description": "Declare a standalone date variable"
@@ -218,7 +218,7 @@
 
     "ISO date Free": {
         "scope": "rpg,rpgle,sqlrpgle",
-        "prefix": ["iso", "date", "free"],
+        "prefix": ["dcl-s iso date free","declare iso date free"],
         "isFileTemplate": false,
         "body": ["dcl-s ${1:variable}\tdate(*iso)\tinz;$0"],
         "description": "Declare a standalone date (date format iso) variable"
@@ -226,7 +226,7 @@
 
     "USA date Free": {
         "scope": "rpg,rpgle,sqlrpgle",
-        "prefix": ["usa", "date", "free"],
+        "prefix": ["dcl-s usa date free","declare usa date free"],
         "isFileTemplate": false,
         "body": ["dcl-s ${1:variable}\tdate(*usa)\tinz;$0"],
         "description": "Declare a standalone date (date format usa) variable"
@@ -235,7 +235,7 @@
 
     "Indicator Free": {
         "scope": "rpg,rpgle,sqlrpgle",
-        "prefix": ["indicator", "ind", "free"],
+        "prefix": ["dcl-s ind free","declare indicator free"],
         "isFileTemplate": false,
         "body": ["dcl-s ${1:variable}\tind\tinz;$0"],
         "description": "Declare a standalone Indicator variable"
@@ -244,7 +244,7 @@
 
     "Pointer Free": {
         "scope": "rpg,rpgle,sqlrpgle",
-        "prefix": ["pointer", "free"],
+        "prefix": ["dcl-s pointer free","declare pointer free"],
         "isFileTemplate": false,
         "body": ["dcl-s ${1:variable}\tpointer;$0"],
         "description": "Declare a standalone pointer"
@@ -252,7 +252,7 @@
 
     "Array Free": {
         "scope": "rpg,rpgle,sqlrpgle",
-        "prefix": ["array", "free"],
+        "prefix": ["dcl-s array free","declare array free"],
         "isFileTemplate": false,
         "body": ["dcl-s ${1:variable}\t${2:char}(${3:1})\tdim(${4:10})\tinz;$0"],
         "description": "Declare a standalone Char array"
@@ -267,7 +267,7 @@
     //   },
     "Dataarea Free": {
         "scope": "rpg,rpgle,sqlrpgle",
-        "prefix": ["dataarea", "free"],
+        "prefix": ["dcl-s dtaara free","declare dataarea free"],
         "isFileTemplate": false,
         "body": ["dcl-s ${1:variable}\t${2:char}(${3:1})\tdtaara('${4:data_area}');$0"],
         "description": "Declare a standalone Char array"
@@ -276,18 +276,18 @@
 
     "Data structure Free": {
         "scope": "rpg,rpgle,sqlrpgle",
-        "prefix": ["ds", "free"],
+        "prefix": ["dcl-s ds free","declare data structure free"],
         "isFileTemplate": false,
         "body": ["dcl-ds ${1:*N} ;",
                 "\t${2:subfield1}\t${3:char}(${4:10});" ,
                 "end-ds;"
             ],
-        "description": "Declare a standalone Char array"
+        "description": "Declare a data structure array"
     },
 
     "External Data structure Free": {
         "scope": "rpg,rpgle,sqlrpgle",
-        "prefix": ["external","ds", "free"],
+        "prefix": ["dcl-ds external ds free","declare external data structure free"],
         "isFileTemplate": false,
         "body": ["dcl-ds ${1:*N} ;",
                 "\textname('${2:table_name}') qualified;" ,
@@ -300,13 +300,13 @@
     "Constant free": {
         "scope": "rpg,rpgle,sqlrpgle",
 
-        "prefix": ["Constant","const", "free"],
+        "prefix": ["dcl-c const free","declare constant free"],
 		"body": ["dcl-c\t${1:name}\t${2:value};$0"],
 		"description": "Declare constant",
 	},
     //--------------------------- RPG flow control ----------------------------------------
     "If free": {
-        "prefix": ["if", "free"],
+        "prefix": ["if free"],
         "scope": "rpg,rpgle,sqlrpgle",
 
 		"body": [
@@ -319,7 +319,7 @@
 		"description": "If block"
 	},
 	"Dow loop free": {
-		"prefix": ["dow", "free"],
+		"prefix": ["dow free"],
 		"description": "Do while loop",
         "scope": "rpg,rpgle,sqlrpgle",
 
@@ -330,7 +330,7 @@
 		]
 	},
 	"Dou loop free": {
-        "prefix": ["dou", "free"],
+        "prefix": ["dou free"],
 		"description": "Do until loop",
         "scope": "rpg,rpgle,sqlrpgle",
 
@@ -341,7 +341,7 @@
 		]
 	},
 	"For loop free": {
-        "prefix": ["for", "free"],
+        "prefix": ["for free"],
 		"description": "For loop",
         "scope": "rpg,rpgle,sqlrpgle",
 
@@ -354,7 +354,7 @@
 
 
     "Select Free": {
-		"prefix": "select",
+		"prefix": ["select free"],
 		"description": "RPG Select statement",
         "scope": "rpg,rpgle,sqlrpgle",
 
@@ -369,21 +369,21 @@
 	},    
     //--------------------------- RPG prototypes ----------------------------------------
 	"QCMDEXE free": {
-        "prefix": ["qcmdexe","clcmd", "free"],
+        "prefix": ["qcmdexe prototype free"],
         "scope": "rpg,rpgle,sqlrpgle",
 
 		"body": [
-			 
+			                                             // PENDING
 		],
 		"description": "Define QCMDEXE prototype"
 	},
 
  	"SYSTEM free": {
-        "prefix": ["system","clcmd", "free"],
+        "prefix": ["system prototype free"],
         "scope": "rpg,rpgle,sqlrpgle",
 
 		"body": [
-	 
+	                                                      // PENDING
 		],
 		"description": "Define SYSTEM prototype"
 	},
@@ -395,7 +395,7 @@
 
     //--------------------------- RPG CODE blocks ----------------------------------------
 	"Subroutine free": {
-        "prefix": ["begsr", "free"],
+        "prefix": ["begsr free"],
         "scope": "rpg,rpgle,sqlrpgle",
 
 		"body": [
@@ -408,7 +408,7 @@
 
 
     "Monitor free": {
-        "prefix": ["mon","monitor", "free"],
+        "prefix": ["monitor free"],
         "scope": "rpg,rpgle,sqlrpgle",
 
         "body": [
@@ -423,7 +423,7 @@
 	},
 
     "Current date free": {
-        "prefix": ["today","current", "free"],
+        "prefix": ["today free","current date free"],
         "scope": "rpg,rpgle,sqlrpgle",
 
         "body": [
@@ -434,7 +434,7 @@
 
 
     "Current time free": {
-        "prefix": ["now","current", "free"],
+        "prefix": ["now free","current time free"],
         "scope": "rpg,rpgle,sqlrpgle",
 
         "body": [
@@ -448,7 +448,7 @@
     //--------------------------- RPG Casting blocks ----------------------------------------
 
     "Cast Char to decimal free": {
-        "prefix": ["cast", "free"],
+        "prefix": ["%dec free" ,"dec free"],
         "scope": "rpg,rpgle,sqlrpgle",
 
         "body": [
@@ -459,11 +459,11 @@
             "\t${1:decimal_field}=0;",
 			"endmon;"
 		],
-		"description": "Get current time"
+		"description": "Cast char to decimal "
 	},
 
     "Cast Char to Date free": {
-        "prefix": ["cast", "free"],
+        "prefix": ["%date free"  ,"char to date free"],
         "scope": "rpg,rpgle,sqlrpgle",
 
         "body": [
@@ -474,11 +474,19 @@
             "\t//TODO",
 			"endmon;"
 		],
-		"description": "Get current time"
+		"description": "Cast date to decimal "
 	},
+
+    // 
+
+
+
+
+
+
     //--------------------------- SQL ----------------------------------------
     "SQL Select": {
-        "prefix": ["sql","select", "free"],
+        "prefix": ["Exec SQL select free","sql select free"],
         "scope": "rpg,rpgle,sqlrpgle",
 
 		"body": ["exec SQL",
@@ -498,7 +506,7 @@
 	},
 
     "SQL Update": {
-        "prefix": ["sql","update", "free"],
+        "prefix": ["Exec SQL update free","sql update free"],
         "scope": "rpg,rpgle,sqlrpgle",
 
 		"body": ["exec SQL",
@@ -515,7 +523,7 @@
 	},
 
     "SQL cursor": {
-        "prefix": ["sql","cursor", "free"],
+        "prefix": ["Exec SQL DECLARE cursor free","sql cursor free"],
 		"description": "SQL cursor",
         "scope": "rpg,rpgle,sqlrpgle",
 		"body": [

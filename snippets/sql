@@ -1,0 +1,233 @@
+"-- Sql Object Name:  ${1:Long_table_name}",
+"-- System Name    :  ${2:${TM_FILENAME_BASE/([^\\.]+).*/${1:/upcase}/}}",
+"-- Description    :",
+"-- Created on     :  $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE",
+"-----------------------------------------------------------------------",
+"-- Maintenance history.",
+"--    Task     Date     Programmer     Description",
+"-----------------------------------------------------------------------",
+" CREATE OR REPLACE TABLE ${1:Long_table_name}",
+"                   FOR SYSTEM NAME ${2:${TM_FILENAME_BASE/([^\\.]+).*/${1:/upcase}/}}",
+" (",
+"  ID                NUMERIC(10)",
+"                    GENERATED ALWAYS AS IDENTITY,",
+"",
+"  ${3:VARCHAR_COL}  FOR COLUMN ${3:VARCHAR_COL}",
+"                    VARCHAR(25)",
+"                    NOT NULL WITH DEFAULT,",
+"",
+"  ${4:NUMERIC_COL}  FOR COLUMN ${4:NUMERIC_COL}",
+"                    NUMERIC(11,2)",
+"                    NOT NULL WITH DEFAULT,",
+"  primary key(ID)",
+" )",
+" rcdfmt ${2:${TM_FILENAME_BASE/([^\\.]+).*/${1:/upcase}/}}R     ;",
+"",
+"",
+"-----------------------------------------------------------------------",
+"--",
+"-----------------------------------------------------------------------",
+" label on table ${2:${TM_FILENAME_BASE/([^\\.]+).*/${1:/upcase}/}}",
+"  is '${4:table_description}';",
+"",
+"",
+"-----------------------------------------------------------------------",
+"--",
+"-----------------------------------------------------------------------",
+"LABEL ON COLUMN ${2:${TM_FILENAME_BASE/([^\\.]+).*/${1:/upcase}/}}(",
+"${3:VARCHAR_COL}                IS '${3:VARCHAR_COL} ',",
+"${4:NUMERIC_COL}                IS '${4:NUMERIC_COL}'",
+");",
+"",
+"",
+"-----------------------------------------------------------------------",
+"--",
+"-----------------------------------------------------------------------",
+"LABEL ON COLUMN ${2:${TM_FILENAME_BASE/([^\\.]+).*/${1:/upcase}/}} (",
+"${3:VARCHAR_COL}        TEXT    IS '${3:VARCHAR_COL}'           ,",
+"${4:NUMERIC_COL}        TEXT    IS '${4:NUMERIC_COL}'",
+");"
+
+
+
+
+
+
+
+"-- Sql Object Name:  ${1:Long_index_name}",
+"-- System Name    :  ${2:${TM_FILENAME_BASE/([^\\.]+).*/${1:/upcase}/}}",
+"-- Description    :",
+"-- Created on     :  $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE",
+"-----------------------------------------------------------------------",
+"-- Maintenance history.",
+"--    Task     Date     Programmer     Description",
+"-----------------------------------------------------------------------",
+"CREATE INDEX  ${1:Long_index_name}"  ,
+"       for system name ${2:${TM_FILENAME_BASE/([^\\.]+).*/${1:/upcase}/}}",
+"    ON ${3:table}(${4:COL1}, ${5:COL2})",
+"    rcdfmt ${2:${TM_FILENAME_BASE/([^\\.]+).*/${1:/upcase}/}}R;",
+       
+"-----------------------------------------------------------------------",
+"--",
+"-----------------------------------------------------------------------",
+"LABEL ON INDEX ${2:${TM_FILENAME_BASE/([^\\.]+).*/${1:/upcase}/}} ",
+"  is '${6:table_description}';"
+
+
+
+
+
+"-- Sql Object Name:  ${1:Long_view_name}",
+"-- System Name    :  ${2:${TM_FILENAME_BASE/([^\\.]+).*/${1:/upcase}/}}",
+"-- Description    :",
+"-- Created on     :  $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE",
+"-----------------------------------------------------------------------",
+"-- Maintenance history.",
+"--    Task     Date     Programmer     Description",
+"-----------------------------------------------------------------------",
+"create view  ${1:Long_view_name}",
+"       for system name ${2:${TM_FILENAME_BASE/([^\\.]+).*/${1:/upcase}/}}",
+" as( ",     
+"    select ${4:COL1}, ${5:COL2}",
+"      from ${3:table}",                                             
+"     where ${6:where}",                                   
+"    rcdfmt ${2:${TM_FILENAME_BASE/([^\\.]+).*/${1:/upcase}/}}R;",                                      
+                                                               
+"-----------------------------------------------------------------------",
+"--",
+"-----------------------------------------------------------------------",
+" label on table ${2:${TM_FILENAME_BASE/([^\\.]+).*/${1:/upcase}/}}",
+"  is '${7:view_description}';",
+"",
+"",    
+    
+    
+    
+    
+    
+"-- Sql Object Name: ${1:${TM_FILENAME_BASE/([^\\.]+).*/${1:/upcase}/}}",
+"-- Specific Name  : ${1:${TM_FILENAME_BASE/([^\\.]+).*/${1:/upcase}/}}",
+"-- Description    :",
+"-- Created on     :  $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE",
+"-----------------------------------------------------------------------",
+"-- Maintenance history.",
+"--    Task     Date     Programmer     Description",
+"-----------------------------------------------------------------------",    
+    
+"Create or Replace Procedure ${1:${TM_FILENAME_BASE/([^\\.]+).*/${1:/upcase}/}}",
+"(",
+" In  ${3:InputParam}  Numeric(9,0),  -- Input",           
+" OUT ${4:OutputParam} Char(200)  -- Output",         
+")",                                                                    
+" LANGUAGE ${5:RPGLE}", 
+" SPECIFIC ${1:${TM_FILENAME_BASE/([^\\.]+).*/${1:/upcase}/}}",
+" NOT DETERMINISTIC",
+" ${6:MODIFIES} SQL DATA",
+" CALLED ON NULL INPUT",                                           
+" EXTERNAL NAME ${1:${TM_FILENAME_BASE/([^\\.]+).*/${1:/upcase}/}}",
+" PARAMETER STYLE GENERAL ;", 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+"-- Sql Object Name: ${1:${TM_FILENAME_BASE/([^\\.]+).*/${1:/upcase}/}}",
+"-- Specific Name  : ${1:${TM_FILENAME_BASE/([^\\.]+).*/${1:/upcase}/}}",
+"-- Description    :",
+"-- Created on     :  $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE",
+"-----------------------------------------------------------------------",
+"-- Maintenance history.",
+"--    Task     Date     Programmer     Description",
+"-----------------------------------------------------------------------",    
+    
+"Create or Replace Procedure ${1:${TM_FILENAME_BASE/([^\\.]+).*/${1:/upcase}/}}",
+"(",
+" In  ${3:InputParam}  Numeric(9,0),  -- Input",           
+" OUT ${4:OutputParam} Char(200)  -- Output",         
+")",                                         
+" Language SQL",
+" ${6:MODIFIES} SQL DATA",                                                   
+" SPECIFIC ${1:${TM_FILENAME_BASE/([^\\.]+).*/${1:/upcase}/}}",
+" No External Action",                                                   
+" NOT DETERMINISTIC",                                               
+" Set Option DBGView = *Source, CLOSQLCSR = *ENDACTGRP, COMMIT = *NONE,",
+" DATFMT = *ISO",
+"",                                                                   
+" Main: Begin",
+"   -- Declare Continue Handler For SQLException",        
+"   --  BEGIN  -- Ignore Error for Null Value",          
+"   -- End;",                                             
+"",
+"   MainLogic: Begin",         
+"",                     
+"   End Mainlogic;",      
+"",
+" End Main;",           
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+"-- Sql Object Name: ${1:${TM_FILENAME_BASE/([^\\.]+).*/${1:/upcase}/}}",
+"-- Specific Name  : ${1:${TM_FILENAME_BASE/([^\\.]+).*/${1:/upcase}/}}",
+"-- Description    :",
+"-- Created on     :  $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE",
+"-----------------------------------------------------------------------",
+"-- Maintenance history.",
+"--    Task     Date     Programmer     Description",
+"-----------------------------------------------------------------------",    
+"CREATE OR REPLACE FUNCTION  ${1:${TM_FILENAME_BASE/([^\\.]+).*/${1:/upcase}/}}",
+"(",
+"  ${3:InputParam}     ${4:CHAR(20)}",
+")",
+" RETURNS  ${5:CHAR(20)}"                          
+" Language SQL",                           
+" ${6:MODIFIES} SQL DATA",                         
+" SPECIFIC ${1:${TM_FILENAME_BASE/([^\\.]+).*/${1:/upcase}/}}",
+" No External Action",                                                   
+" NOT DETERMINISTIC",                         
+" Set Option DBGView = *Source, CLOSQLCSR = *ENDACTGRP, COMMIT = *NONE,",
+" DATFMT = *ISO",              
+"  BEGIN",
+""  
+"  END",
+    
+    
+    
+ create or replace function FN_GETNEXTAPPSEQUENCE (   
+)                                                    
+returns numeric(11,0)                                
+language rpgle                                       
+not deterministic                                    
+SPECIFIC FN_APPSEQ                                   
+Modifies SQL DATA                                    
+Called on null input                                 
+external name KWSERVICE(Kw_GetAlSeq)                 
+parameter style general                              
+program type sub                                     
+
+
+
+ 
+ 
+ 
+ 
+  
