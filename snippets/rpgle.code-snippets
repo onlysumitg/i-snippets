@@ -171,7 +171,7 @@
         "scope": "rpg,rpgle,sqlrpgle",
         "prefix": ["dcl-s int free","declare int free"],
         "isFileTemplate": false,
-        "body": ["dcl-s ${1:variable}\tint(${2:3}})\tinz;$0"],
+        "body": ["dcl-s ${1:variable}\tint(${2:3})\tinz;$0"],
         "description": "Declare a standalone integer variable"
     },
 
@@ -179,7 +179,7 @@
         "scope": "rpg,rpgle,sqlrpgle",
         "prefix": ["dcl-s uns free","declare unsigned int free"],
         "isFileTemplate": false,
-        "body": ["dcl-s ${1:variable}\tuns(${2:3}})\tinz;$0"],
+        "body": ["dcl-s ${1:variable}\tuns(${2:3})\tinz;$0"],
         "description": "Declare a standalone unsigned integer variable"
     },
 
@@ -188,7 +188,7 @@
         "scope": "rpg,rpgle,sqlrpgle",
         "prefix": ["dcl-s float free","declare float free"],
         "isFileTemplate": false,
-        "body": ["dcl-s ${1:variable}\tfloat(${2:8}})\tinz;$0"],
+        "body": ["dcl-s ${1:variable}\tfloat(${2:8})\tinz;$0"],
         "description": "Declare a standalone float variable"
     },
 
@@ -265,13 +265,7 @@
     //     "body": ["dcl-s ${1:variable}\tchar(${2:1})\tdim(${3:10})\tinz;$0" ],
     //     "description": "Declare a standalone Char array"
     //   },
-    "Dataarea Free": {
-        "scope": "rpg,rpgle,sqlrpgle",
-        "prefix": ["dcl-s dtaara free","declare dataarea free"],
-        "isFileTemplate": false,
-        "body": ["dcl-s ${1:variable}\t${2:char}(${3:1})\tdtaara('${4:data_area}');$0"],
-        "description": "Declare a standalone Char array"
-    },
+
 
 
     "Data structure Free": {
@@ -478,15 +472,227 @@
 	},
 
     // 
+    //--------------------------- DATAQ ----------------------------------------
+    "API Error": {
+        "scope": "rpg,rpgle,sqlrpgle",
+        "prefix": ["ApiErrC","Api Error"],
+        "isFileTemplate": false,
+        "body": [ 
+            "dcl-ds\tApiErrC\tQualified\tInz;",
+            "\tBytesProvided\tInt(10:0)\tInz(%size(ApiErrC));",
+            "\tBytesAvailable\tInt(10:0);",
+            "\tExceptionID\tChar(7);",
+            "\tReserved\tChar(1);",
+            "\tExceptionData\tChar(3000);",
+            "end-ds;$0",
+             ],
+        "description": "API Error structure ApiErrC"
+    },
+
+
+    "QRCVDTAQ Free": {
+        "scope": "rpg,rpgle,sqlrpgle",
+        "prefix": ["QRCVDTAQ","dcl-pr QRCVDTAQ"],
+        "isFileTemplate": false,
+        "body": [ 
+            "dcl-pr\tQRCVDTAQ\textpgm('QRCVDTAQ');",
+            "\tDataQueueName\t\t\tchar(10)\tconst;",
+            "\tDataQueueLib\t\t\tchar(10)\tconst;",
+            "\tDataLength\t\t\t\tpacked(5:0);",
+            "\tData\t\t\t\t\t\t\tchar(65535)\toptions(*varsize);",
+            "\tWaitTime\t\t\t\t\tpacked(5:0)\tconst;",
+            "\t// optional parm group 1",
+            "\tKeyOrder\t\t\t\t\tchar(2)\tconst\toptions(*nopass);",
+            "\tKeyLength\t\t\t\t\tpacked(3:0)\tconst\toptions(*nopass);",
+            "\tKeyData\t\t\t\t\t\tchar(256)\tconst\toptions(*nopass:*varsize);",
+            "\tSenderInfoLength\tpacked(3:0)\tconst\toptions(*nopass);",
+            "\tSenderInfo\t\t\t\tchar(44)\tconst\toptions(*nopass:*varsize);",
+            "\t// optional parm group 2",
+            "\tRemoveMessage\t\t\tchar(10)\tconst\toptions(*nopass);",
+            "\tDataReciverSize\t\tpacked(5:0)\tconst\toptions(*nopass);",
+            "\tErrorCode\t\t\t\t\tlikeds(ApiErrC)\toptions(*nopass:*varsize);",
+            "end-pr;$0"
+             ],
+        "description": "[All Params]QRCVDTAQ Receive data Queue entry"
+    },
+
+    "Basic QRCVDTAQ Free": {
+        "scope": "rpg,rpgle,sqlrpgle",
+        "prefix": ["QRCVDTAQ","dcl-pr QRCVDTAQ"],
+        "isFileTemplate": false,
+        "body": [ 
+            "dcl-pr\tQRCVDTAQ\textpgm('QRCVDTAQ');",
+            "\tDataQueueName\tchar(10)\tconst;",
+            "\tDataQueueLib\tchar(10)\tconst;",
+            "\tDataLength\t\tpacked(5:0);",
+            "\tData\t\t\t\tchar(65535)\toptions(*varsize);",
+            "\tWaitTime\t\t\tpacked(5:0)\tconst;",
+            "end-pr;$0"
+             ],
+        "description": "[Basic Params]QRCVDTAQ Receive data Queue entry"
+    },
+
+
+    "QSNDDTAQ Free": {
+        "scope": "rpg,rpgle,sqlrpgle",
+        "prefix": ["QSNDDTAQ","dcl-pr QSNDDTAQ"],
+        "isFileTemplate": false,
+        "body": [ 
+            "dcl-pr\tQSNDDTAQ\textpgm('QSNDDTAQ');",
+            "\tDataQueueName\t\t\t\tchar(10)\tconst;",
+            "\tDataQueueLib\t\t\t\tchar(10)\tconst;",
+            "\tDataLength\t\t\t\t\tpacked(5:0);",
+            "\tData\t\t\t\t\t\t\t\tchar(65535)\toptions(*varsize);",
+            "\t// opional parm group 1",
+            "\tKeyLength\t\t\t\t\t\tpacked(3:0)\tconst\toptions(*nopass);",
+            "\tKeyData\t\t\t\t\t\t\tchar(256)\tconst\toptions(*nopass:*varsize);",
+            "\t// opional parm group 2",
+            "\tAsynchronousRequest\tchar(10)\tconst\toptions(*nopass);",
+            "\t// opional parm group 3",
+            "\tIsJournalEntryData\tchar(10)\tconst\toptions(*nopass);",
+            "end-pr;$0",
+             ],
+        "description": "[All Parms]QSNDDTAQ Send entry to data Queue"
+    },
+
+    "QSNDDTAQ Basic Free": {
+        "scope": "rpg,rpgle,sqlrpgle",
+        "prefix": ["QSNDDTAQ","dcl-pr QSNDDTAQ"],
+        "isFileTemplate": false,
+        "body": [ 
+            "dcl-pr\tQSNDDTAQ\textpgm('QSNDDTAQ');",
+            "\tDataQueueName\tchar(10)\tconst;",
+            "\tDataQueueLib\tchar(10)\tconst;",
+            "\tDataLength\t\tpacked(5:0);",
+            "\tData\t\t\t\t\tchar(65535)\toptions(*varsize);",
+            "end-pr;$0",
+             ],
+        "description": "[Basic Parms]QSNDDTAQ Send entry to data Queue"
+    },
+
+
+    // DATAQ SQL functions ------------------------
+    //https://www.ibm.com/docs/en/i/7.4?topic=as-send-data-queue-send-data-queue-binary-send-data-queue-utf8-procedures
+
+    "SEND_DATA_QUEUE Basic Free": {
+        "scope": "rpg,rpgle,sqlrpgle",
+        "prefix": ["SEND_DATA_QUEUE","SEND DATA QUEUE"],
+        "isFileTemplate": false,
+		"body": ["exec SQL",
+                  "\tCALL QSYS2.SEND_DATA_QUEUE(",
+                  "\t              DATA_QUEUE => '${2:DataQName}',",
+                  "\t              DATA_QUEUE_LIBRARY => '${3:*LIBL}',",
+                  "\t              MESSAGE_DATA => '${4:Data}',",
+                  "\t              ASYNCHRONOUS => '${5:|YES,NO|}');",
+                  "",
+                  "if sqlcode <> 0;",
+                  "\t//TODO",
+                  "endif;$0",
+  
+
+                ],
+        "description": "[Basic Parms]QSYS2.SEND_DATA_QUEUE"
+    },
+    "SEND_DATA_QUEUE   Free": {
+        "scope": "rpg,rpgle,sqlrpgle",
+        "prefix": ["SEND_DATA_QUEUE","SEND DATA QUEUE"],
+        "isFileTemplate": false,
+		"body": ["exec SQL",
+                  "\tCALL QSYS2.SEND_DATA_QUEUE(",
+                  "\t              DATA_QUEUE => '${2:DataQName}',",
+                  "\t              DATA_QUEUE_LIBRARY => '${3:*LIBL}',",
+                  "\t              MESSAGE_DATA => '${4:Data}',",
+                  "\t              KEY_DATA => '${5:KeyData}',",
+                  "\t              ASYNCHRONOUS => '${6:|YES,NO|}');",
+                  "",
+                  "if sqlcode <> 0;",
+                  "\t//TODO",
+                  "endif;$0",
+  
+
+                ],
+        "description": "[ALL Parms]QSYS2.SEND_DATA_QUEUE"
+    },
+
+
+    // https://www.ibm.com/docs/en/i/7.4?topic=services-receive-data-queue-table-function
+    "RECEIVE_DATA_QUEUE Basic Free": {
+        "scope": "rpg,rpgle,sqlrpgle",
+        "prefix": ["RECEIVE_DATA_QUEUE","RECEIVE DATA QUEUE"],
+        "isFileTemplate": false,
+		"body": ["exec SQL",
+                  "\tselect MESSAGE_DATA",
+                  "\t  into :${1:host_variable}",
+                  "\t  from TABLE(QSYS2.RECEIVE_DATA_QUEUE(",
+                  "\t              DATA_QUEUE => '${2:DataQName}',",
+                  "\t              DATA_QUEUE_LIBRARY => '${3:*LIBL}',",
+                  "\t              REMOVE => '${4|YES,NO|}',",
+                  "\t              WAIT_TIME => ${5:-1}));",
+                  "",
+                  "if sqlcode <> 0;",
+                  "\t//TODO",
+                  "endif;$0",
+  
+
+                ],
+        "description": "[Basic Parms]QSYS2.RECEIVE_DATA_QUEUE"
+    },
+
+    "RECEIVE_DATA_QUEUE Free": {
+        "scope": "rpg,rpgle,sqlrpgle",
+        "prefix": ["RECEIVE_DATA_QUEUE","RECEIVE DATA QUEUE"],
+        "isFileTemplate": false,
+		"body": ["exec SQL",
+                  "\tselect MESSAGE_DATA",
+                  "\t  into :${1:host_variable}",
+                  "\t  from TABLE(QSYS2.RECEIVE_DATA_QUEUE(",
+                  "\t              DATA_QUEUE => '${2:DataQName}',",
+                  "\t              DATA_QUEUE_LIBRARY => '${3:*LIBL}',",
+                  "\t              REMOVE => '${4|YES,NO|}',",
+                  "\t              WAIT_TIME => '${5:-1}',",
+                  "\t              KEY_DATA => '${6:KeyData}',",
+                  "\t              KEY_ORDER => '${7|EQ,GE,GT,LE,LT,NE|}'));",
+                  "",
+                  "if sqlcode <> 0;",
+                  "\t//TODO",
+                  "endif;$0",
+  
+
+                ],
+        "description": "[ALL Parms]QSYS2.RECEIVE_DATA_QUEUE"
+    },
+
+    //--------------------------- DATA AREA ----------------------------------------
+
+    "Dataarea Free": {
+        "scope": "rpg,rpgle,sqlrpgle",
+        "prefix": ["dcl-s dtaara free","declare dataarea free"],
+        "isFileTemplate": false,
+        "body": ["dcl-s ${1:variable}\t${2:char}(${3:1})\tdtaara('${4:data_area}');$0"],
+        "description": "Declare a dataarea"
+    },
 
 
 
+    "Read Dataarea Free": {
+        "scope": "rpg,rpgle,sqlrpgle",
+        "prefix": ["in *lock","Read dataarea free"],
+        "isFileTemplate": false,
+        "body": ["in *lock ${1:variable};$0"],
+        "description": "Read dataarea"
+    },
 
 
-
+    "Write Dataarea Free": {
+        "scope": "rpg,rpgle,sqlrpgle",
+        "prefix": ["out","Write dataarea free"],
+        "isFileTemplate": false,
+        "body": ["out ${1:variable};$0"],
+        "description": "Write dataarea"
+    },
     //--------------------------- SQL ----------------------------------------
     "SQL Select": {
-        "prefix": ["Exec SQL select free","sql select free"],
+        "prefix": ["Exec SQL select free" ],
         "scope": "rpg,rpgle,sqlrpgle",
 
 		"body": ["exec SQL",
@@ -506,7 +712,7 @@
 	},
 
     "SQL Update": {
-        "prefix": ["Exec SQL update free","sql update free"],
+        "prefix": ["Exec SQL update free" ],
         "scope": "rpg,rpgle,sqlrpgle",
 
 		"body": ["exec SQL",
@@ -523,7 +729,7 @@
 	},
 
     "SQL cursor": {
-        "prefix": ["Exec SQL DECLARE cursor free","sql cursor free"],
+        "prefix": ["Exec SQL DECLARE cursor free",],
 		"description": "SQL cursor",
         "scope": "rpg,rpgle,sqlrpgle",
 		"body": [
@@ -555,5 +761,17 @@
 			"EXEC SQL",
 			"  CLOSE @$1;",
 		]
+	},
+
+
+    "SQL Set option": {
+        "prefix": ["Exec SQL set option" ],
+        "scope": "rpg,rpgle,sqlrpgle",
+
+		"body": [
+                "EXEC SQL",
+                "\tSet Option DBGView = *Source, CLOSQLCSR = ${1|*ENDMOD,*ENDACTGRP|},DATFMT = *ISO, COMMIT = *NONE;",            
+                ],
+		"description": "SQL update statement",
 	},
 }
