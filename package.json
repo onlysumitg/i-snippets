@@ -1,20 +1,20 @@
 {
   "name": "i-snippets",
-  "displayName": "IBM i code Snippets",
+  "displayName": "IBM I code Snippets",
   "description": "code snippets for IBM i languages like RPG RPGLE CL CLLE SQL",
   "version": "0.0.1",
   "publisher":"Zerobit",
   "icon": "images/isnippet.png",
   "keywords":["IBM I","RPGLE","RPG","SQLRPGLE","CLLE","CL"],
   
-  "homepage": "https://github.com/microsoft/vscode-wordcount/blob/main/README.md",
+  "homepage": "https://github.com/onlysumitg/i-snippets/blob/main/README.md",
   "bugs": {
-    "url": "https://github.com/microsoft/vscode-wordcount/issues",
-    "email": "sean@contoso.com"
+    "url": "https://github.com/onlysumitg/i-snippets/issues",
+    "email": "onlysumitg@gmail.com"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/microsoft/vscode-wordcount.git"
+    "url": "https://github.com/onlysumitg/i-snippets"
   },
 
   "engines": {
