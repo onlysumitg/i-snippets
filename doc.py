@@ -28,7 +28,9 @@ if __name__ =="__main__":
                     if type(trigger) == list:
                         trigger = ",".join(trigger)
 
-                    finalDict = {"Snippet": k,"Description":v.get("description","") , "Trigger":trigger}
+
+                    
+                    finalDict = {"Scope" :v.get("scope",""),"Snippet": k,"Description":v.get("description","") , "Trigger":trigger}
                     finalList.append(finalDict)
 
     mdTable= Tomark.table(finalList)
