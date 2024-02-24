@@ -50,17 +50,17 @@ VS code snippets for IBM I based languages like
 | rpg,rpgle,sqlrpgle | Basic QRCVDTAQ Free | [Basic Params]QRCVDTAQ Receive data Queue entry | QRCVDTAQ,dcl-pr QRCVDTAQ |
 | rpg,rpgle,sqlrpgle | QSNDDTAQ Free | [All Parms]QSNDDTAQ Send entry to data Queue | QSNDDTAQ,dcl-pr QSNDDTAQ |
 | rpg,rpgle,sqlrpgle | QSNDDTAQ Basic Free | [Basic Parms]QSNDDTAQ Send entry to data Queue | QSNDDTAQ,dcl-pr QSNDDTAQ |
-| rpg,rpgle,sqlrpgle | SEND_DATA_QUEUE Basic Free | [Basic Parms]QSYS2.SEND_DATA_QUEUE | SEND_DATA_QUEUE,SEND DATA QUEUE |
-| rpg,rpgle,sqlrpgle | SEND_DATA_QUEUE   Free | [ALL Parms]QSYS2.SEND_DATA_QUEUE | SEND_DATA_QUEUE,SEND DATA QUEUE |
-| rpg,rpgle,sqlrpgle | RECEIVE_DATA_QUEUE Basic Free | [Basic Parms]QSYS2.RECEIVE_DATA_QUEUE | RECEIVE_DATA_QUEUE,RECEIVE DATA QUEUE |
-| rpg,rpgle,sqlrpgle | RECEIVE_DATA_QUEUE Free | [ALL Parms]QSYS2.RECEIVE_DATA_QUEUE | RECEIVE_DATA_QUEUE,RECEIVE DATA QUEUE |
+| sqlrpgle | SEND_DATA_QUEUE Basic Free | [Basic Parms]QSYS2.SEND_DATA_QUEUE | SEND_DATA_QUEUE,SEND DATA QUEUE |
+| sqlrpgle | SEND_DATA_QUEUE   Free | [ALL Parms]QSYS2.SEND_DATA_QUEUE | SEND_DATA_QUEUE,SEND DATA QUEUE |
+| sqlrpgle | RECEIVE_DATA_QUEUE Basic Free | [Basic Parms]QSYS2.RECEIVE_DATA_QUEUE | RECEIVE_DATA_QUEUE,RECEIVE DATA QUEUE |
+| sqlrpgle | RECEIVE_DATA_QUEUE Free | [ALL Parms]QSYS2.RECEIVE_DATA_QUEUE | RECEIVE_DATA_QUEUE,RECEIVE DATA QUEUE |
 | rpg,rpgle,sqlrpgle | Dataarea Free | Declare a dataarea | dcl-s dtaara free,declare dataarea free |
 | rpg,rpgle,sqlrpgle | Read Dataarea Free | Read dataarea | in *lock,Read dataarea free |
 | rpg,rpgle,sqlrpgle | Write Dataarea Free | Write dataarea | out,Write dataarea free |
-| rpg,rpgle,sqlrpgle | SQL Select | SQL select statement | Exec SQL select free |
-| rpg,rpgle,sqlrpgle | SQL Update | SQL update statement | Exec SQL update free |
-| rpg,rpgle,sqlrpgle | SQL cursor | SQL cursor | Exec SQL DECLARE cursor free |
-| rpg,rpgle,sqlrpgle | SQL Set option | SQL update statement | Exec SQL set option |
+| sqlrpgle | SQL Select | SQL select statement | Exec SQL select free |
+| sqlrpgle | SQL Update | SQL update statement | Exec SQL update free |
+| sqlrpgle | SQL cursor | SQL cursor | Exec SQL DECLARE cursor free |
+| sqlrpgle | SQL Set option | SQL update statement | Exec SQL set option |
 | sql, sqltab | create table | Create table template | create table |
 | sql | create external procedure | Create external procedure template | create external procedure |
 | sql | create procedure | Create procedure template | create procedure |

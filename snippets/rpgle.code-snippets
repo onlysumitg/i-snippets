@@ -575,7 +575,7 @@
     //https://www.ibm.com/docs/en/i/7.4?topic=as-send-data-queue-send-data-queue-binary-send-data-queue-utf8-procedures
 
     "SEND_DATA_QUEUE Basic Free": {
-        "scope": "rpg,rpgle,sqlrpgle",
+        "scope": "sqlrpgle",
         "prefix": ["SEND_DATA_QUEUE","SEND DATA QUEUE"],
         "isFileTemplate": false,
 		"body": ["exec SQL",
@@ -594,7 +594,7 @@
         "description": "[Basic Parms]QSYS2.SEND_DATA_QUEUE"
     },
     "SEND_DATA_QUEUE   Free": {
-        "scope": "rpg,rpgle,sqlrpgle",
+        "scope": "sqlrpgle",
         "prefix": ["SEND_DATA_QUEUE","SEND DATA QUEUE"],
         "isFileTemplate": false,
 		"body": ["exec SQL",
@@ -617,7 +617,7 @@
 
     // https://www.ibm.com/docs/en/i/7.4?topic=services-receive-data-queue-table-function
     "RECEIVE_DATA_QUEUE Basic Free": {
-        "scope": "rpg,rpgle,sqlrpgle",
+        "scope": "sqlrpgle",
         "prefix": ["RECEIVE_DATA_QUEUE","RECEIVE DATA QUEUE"],
         "isFileTemplate": false,
 		"body": ["exec SQL",
@@ -639,7 +639,7 @@
     },
 
     "RECEIVE_DATA_QUEUE Free": {
-        "scope": "rpg,rpgle,sqlrpgle",
+        "scope": "sqlrpgle",
         "prefix": ["RECEIVE_DATA_QUEUE","RECEIVE DATA QUEUE"],
         "isFileTemplate": false,
 		"body": ["exec SQL",
@@ -693,7 +693,7 @@
     //--------------------------- SQL ----------------------------------------
     "SQL Select": {
         "prefix": ["Exec SQL select free" ],
-        "scope": "rpg,rpgle,sqlrpgle",
+        "scope": "sqlrpgle",
 
 		"body": ["exec SQL",
                   "\tselect ${1:column}",
@@ -713,7 +713,7 @@
 
     "SQL Update": {
         "prefix": ["Exec SQL update free" ],
-        "scope": "rpg,rpgle,sqlrpgle",
+        "scope": "sqlrpgle",
 
 		"body": ["exec SQL",
                   "\tupdate ${1:table_name}",
@@ -731,7 +731,7 @@
     "SQL cursor": {
         "prefix": ["Exec SQL DECLARE cursor free",],
 		"description": "SQL cursor",
-        "scope": "rpg,rpgle,sqlrpgle",
+        "scope": "sqlrpgle",
 		"body": [
 			 
 			"EXEC SQL",
@@ -766,7 +766,7 @@
 
     "SQL Set option": {
         "prefix": ["Exec SQL set option" ],
-        "scope": "rpg,rpgle,sqlrpgle",
+        "scope": "sqlrpgle",
 
 		"body": [
                 "EXEC SQL",
