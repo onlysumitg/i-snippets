@@ -1,11 +1,11 @@
 {
   "name": "i-snippets",
-  "displayName": "IBM I code Snippets",
+  "displayName": "IBM i code Snippets",
   "description": "code snippets for IBM i languages like RPG RPGLE CL CLLE SQL",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "publisher":"Zerobit",
   "icon": "images/isnippet.png",
-  "keywords":["IBM I","RPGLE","RPG","SQLRPGLE","CLLE","CL"],
+  "keywords":["IBM i","RPGLE","RPG","SQLRPGLE","CLLE","CL"],
   
   "homepage": "https://github.com/onlysumitg/i-snippets/blob/main/README.md",
   "bugs": {

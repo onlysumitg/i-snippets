@@ -1,6 +1,6 @@
 # i-snippets README
 
-VS code snippets for IBM I based languages like
+VS code snippets for IBM i based languages like
 - RPGLE
 - RPG
 - CL
