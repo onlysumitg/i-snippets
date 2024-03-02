@@ -2,7 +2,7 @@
 
     "Rpgle Free template": {
         "scope": "rpg,rpgle,sqlrpgle",
-        "prefix": ["rpgle free template"],
+        "prefix": ["rpgle template"],
         "isFileTemplate": true,
         "body": [
             "**free",
@@ -77,7 +77,7 @@
 
     "Rpgle Free hello world": {
         "scope": "rpg,rpgle,sqlrpgle",
-        "prefix": ["rpgle free hello world"],
+        "prefix": ["rpgle hello world"],
         "isFileTemplate": true,
         "body": [
             "**free",
@@ -130,7 +130,7 @@
             "// $process: main processing logic",
             "//---------------------------------------------",
             "begsr\t$process;",
-			"\tdsply 'Hello world!,",
+			"\tdsply 'Hello world!';",
 			"endsr;",
 
             "",
@@ -152,7 +152,7 @@
 
     "Zoned Free": {
         "scope": "rpg,rpgle,sqlrpgle",
-        "prefix": ["dcl-s zoned free","declare zoned free"],
+        "prefix": ["dcl-s zoned","declare zoned"],
         "isFileTemplate": false,
         "body": ["dcl-s ${1:variable}\tzoned(${2:5}:${3:0})\tinz;$0"],
        //"body": ["${TM_CURRENT_LINE/.*/y/g}"],
@@ -161,7 +161,7 @@
 
     "Packed Free": {
         "scope": "rpg,rpgle,sqlrpgle",
-        "prefix": ["dlc-s packed free","declare packed free"],
+        "prefix": ["dlc-s packed","declare packed"],
         "isFileTemplate": false,
         "body": ["dcl-s ${1:variable}\tpacked(${2:5}:${3:0})\tinz;$0"],
         "description": "Declare a standalone packed variable"
@@ -169,7 +169,7 @@
 
     "Int Free": {
         "scope": "rpg,rpgle,sqlrpgle",
-        "prefix": ["dcl-s int free","declare int free"],
+        "prefix": ["dcl-s int","declare int"],
         "isFileTemplate": false,
         "body": ["dcl-s ${1:variable}\tint(${2:3})\tinz;$0"],
         "description": "Declare a standalone integer variable"
@@ -177,7 +177,7 @@
 
     "Uns Free": {
         "scope": "rpg,rpgle,sqlrpgle",
-        "prefix": ["dcl-s uns free","declare unsigned int free"],
+        "prefix": ["dcl-s uns","declare unsigned int"],
         "isFileTemplate": false,
         "body": ["dcl-s ${1:variable}\tuns(${2:3})\tinz;$0"],
         "description": "Declare a standalone unsigned integer variable"
@@ -186,7 +186,7 @@
 
     "Float Free": {
         "scope": "rpg,rpgle,sqlrpgle",
-        "prefix": ["dcl-s float free","declare float free"],
+        "prefix": ["dcl-s float","declare float"],
         "isFileTemplate": false,
         "body": ["dcl-s ${1:variable}\tfloat(${2:8})\tinz;$0"],
         "description": "Declare a standalone float variable"
@@ -195,7 +195,7 @@
 
     "Char Free": {
         "scope": "rpg,rpgle,sqlrpgle",
-        "prefix": ["dcl-s char free","declare char free"],
+        "prefix": ["dcl-s char","declare char"],
         "isFileTemplate": false,
         "body": ["dcl-s ${1:variable}\tchar(${2:1})\tinz;$0"],
         "description": "Declare a standalone char variable"
@@ -203,14 +203,14 @@
 
     "CLOB Free": {
         "scope": "rpg,rpgle,sqlrpgle",
-        "prefix": ["dcl-s clob free","declare clob free"],
+        "prefix": ["dcl-s clob","declare clob"],
         "isFileTemplate": false,
         "body": ["dcl-s ${1:variable}\tSQLTYPE(CLOB:${2:1048576)\tinz;$0"],
         "description": "Declare a standalone SQLTYPE CLOB variable"
     },
     "Date Free": {
         "scope": "rpg,rpgle,sqlrpgle",
-        "prefix": ["dcl-s date free","declare date free"],
+        "prefix": ["dcl-s date","declare date"],
         "isFileTemplate": false,
         "body": ["dcl-s ${1:variable}\tdate(${2:*iso})\tinz;$0"],
         "description": "Declare a standalone date variable"
@@ -218,7 +218,7 @@
 
     "ISO date Free": {
         "scope": "rpg,rpgle,sqlrpgle",
-        "prefix": ["dcl-s iso date free","declare iso date free"],
+        "prefix": ["dcl-s iso date","declare iso date"],
         "isFileTemplate": false,
         "body": ["dcl-s ${1:variable}\tdate(*iso)\tinz;$0"],
         "description": "Declare a standalone date (date format iso) variable"
@@ -226,7 +226,7 @@
 
     "USA date Free": {
         "scope": "rpg,rpgle,sqlrpgle",
-        "prefix": ["dcl-s usa date free","declare usa date free"],
+        "prefix": ["dcl-s usa date","declare usa date"],
         "isFileTemplate": false,
         "body": ["dcl-s ${1:variable}\tdate(*usa)\tinz;$0"],
         "description": "Declare a standalone date (date format usa) variable"
@@ -235,7 +235,7 @@
 
     "Indicator Free": {
         "scope": "rpg,rpgle,sqlrpgle",
-        "prefix": ["dcl-s ind free","declare indicator free"],
+        "prefix": ["dcl-s ind","declare indicator"],
         "isFileTemplate": false,
         "body": ["dcl-s ${1:variable}\tind\tinz;$0"],
         "description": "Declare a standalone Indicator variable"
@@ -244,7 +244,7 @@
 
     "Pointer Free": {
         "scope": "rpg,rpgle,sqlrpgle",
-        "prefix": ["dcl-s pointer free","declare pointer free"],
+        "prefix": ["dcl-s pointer","declare pointer"],
         "isFileTemplate": false,
         "body": ["dcl-s ${1:variable}\tpointer;$0"],
         "description": "Declare a standalone pointer"
@@ -252,7 +252,7 @@
 
     "Array Free": {
         "scope": "rpg,rpgle,sqlrpgle",
-        "prefix": ["dcl-s array free","declare array free"],
+        "prefix": ["dcl-s array","declare array"],
         "isFileTemplate": false,
         "body": ["dcl-s ${1:variable}\t${2:char}(${3:1})\tdim(${4:10})\tinz;$0"],
         "description": "Declare a standalone Char array"
@@ -260,7 +260,7 @@
 
     //   "Char Array Free": {
     //     "scope": "rpg,rpgle,sqlrpgle",
-    //     "prefix": ["chararray", "array",   "free"],
+    //     "prefix": ["chararray", "array",   "],
     //     "isFileTemplate": false,
     //     "body": ["dcl-s ${1:variable}\tchar(${2:1})\tdim(${3:10})\tinz;$0" ],
     //     "description": "Declare a standalone Char array"
@@ -270,7 +270,7 @@
 
     "Data structure Free": {
         "scope": "rpg,rpgle,sqlrpgle",
-        "prefix": ["dcl-s ds free","declare data structure free"],
+        "prefix": ["dcl-s ds","declare data structure"],
         "isFileTemplate": false,
         "body": ["dcl-ds ${1:*N} ;",
                 "\t${2:subfield1}\t${3:char}(${4:10});" ,
@@ -281,7 +281,7 @@
 
     "External Data structure Free": {
         "scope": "rpg,rpgle,sqlrpgle",
-        "prefix": ["dcl-ds external ds free","declare external data structure free"],
+        "prefix": ["dcl-ds external ds","declare external data structure"],
         "isFileTemplate": false,
         "body": ["dcl-ds ${1:*N} ;",
                 "\textname('${2:table_name}') qualified;" ,
@@ -294,13 +294,13 @@
     "Constant free": {
         "scope": "rpg,rpgle,sqlrpgle",
 
-        "prefix": ["dcl-c const free","declare constant free"],
+        "prefix": ["dcl-c const","declare constant free"],
 		"body": ["dcl-c\t${1:name}\t${2:value};$0"],
 		"description": "Declare constant",
 	},
     //--------------------------- RPG flow control ----------------------------------------
     "If free": {
-        "prefix": ["if free"],
+        "prefix": ["if"],
         "scope": "rpg,rpgle,sqlrpgle",
 
 		"body": [
@@ -310,11 +310,11 @@
             "\t//TODO",
             "endif;"
 		],
-		"description": "If block"
+		"description": "RPGLE If block"
 	},
 	"Dow loop free": {
-		"prefix": ["dow free"],
-		"description": "Do while loop",
+		"prefix": ["dow"],
+		"description": "RPGLE Do while loop",
         "scope": "rpg,rpgle,sqlrpgle",
 
 		"body": [
@@ -324,8 +324,8 @@
 		]
 	},
 	"Dou loop free": {
-        "prefix": ["dou free"],
-		"description": "Do until loop",
+        "prefix": ["dou"],
+		"description": "RPGLE Do until loop",
         "scope": "rpg,rpgle,sqlrpgle",
 
 		"body": [
@@ -335,8 +335,8 @@
 		]
 	},
 	"For loop free": {
-        "prefix": ["for free"],
-		"description": "For loop",
+        "prefix": ["for"],
+		"description": "RPGLE For loop",
         "scope": "rpg,rpgle,sqlrpgle",
 
 		"body": [
@@ -348,8 +348,8 @@
 
 
     "Select Free": {
-		"prefix": ["select free"],
-		"description": "RPG Select statement",
+		"prefix": ["select"],
+		"description": "RPGLE Select statement",
         "scope": "rpg,rpgle,sqlrpgle",
 
 		"body": [
@@ -363,23 +363,23 @@
 	},    
     //--------------------------- RPG prototypes ----------------------------------------
 	"QCMDEXE free": {
-        "prefix": ["qcmdexe prototype free"],
+        "prefix": ["qcmdexe prototype"],
         "scope": "rpg,rpgle,sqlrpgle",
 
 		"body": [
 			                                             // PENDING
 		],
-		"description": "Define QCMDEXE prototype"
+		"description": "RPGLE Define QCMDEXE prototype"
 	},
 
  	"SYSTEM free": {
-        "prefix": ["system prototype free"],
+        "prefix": ["system prototype"],
         "scope": "rpg,rpgle,sqlrpgle",
 
 		"body": [
 	                                                      // PENDING
 		],
-		"description": "Define SYSTEM prototype"
+		"description": "RPGLE Define SYSTEM prototype"
 	},
     
 
@@ -389,7 +389,7 @@
 
     //--------------------------- RPG CODE blocks ----------------------------------------
 	"Subroutine free": {
-        "prefix": ["begsr free"],
+        "prefix": ["begsr"],
         "scope": "rpg,rpgle,sqlrpgle",
 
 		"body": [
@@ -397,12 +397,12 @@
 			"\t//TODO",
 			"endsr;"
 		],
-		"description": "Define subroutine"
+		"description": "RPGLE Define subroutine"
 	},
 
 
     "Monitor free": {
-        "prefix": ["monitor free"],
+        "prefix": ["monitor"],
         "scope": "rpg,rpgle,sqlrpgle",
 
         "body": [
@@ -413,28 +413,28 @@
             "\t//TODO",
 			"endmon;"
 		],
-		"description": "Define monitor Block"
+		"description": "RPGLE Define monitor Block"
 	},
 
     "Current date free": {
-        "prefix": ["today free","current date free"],
+        "prefix": ["today","current date"],
         "scope": "rpg,rpgle,sqlrpgle",
 
         "body": [
 			"today = %date();",
 		],
-		"description": "Get current date"
+		"description": "RPGLE Get current date"
 	},
 
 
     "Current time free": {
-        "prefix": ["now free","current time free"],
+        "prefix": ["now","current time"],
         "scope": "rpg,rpgle,sqlrpgle",
 
         "body": [
 			"now = %time();",
 		],
-		"description": "Get current time"
+		"description": "RPGLE Get current time"
 	},
 
 
@@ -442,7 +442,7 @@
     //--------------------------- RPG Casting blocks ----------------------------------------
 
     "Cast Char to decimal free": {
-        "prefix": ["%dec free" ,"dec free"],
+        "prefix": ["%dec" ,"char to dec"],
         "scope": "rpg,rpgle,sqlrpgle",
 
         "body": [
@@ -453,11 +453,11 @@
             "\t${1:decimal_field}=0;",
 			"endmon;"
 		],
-		"description": "Cast char to decimal "
+		"description": "RPGLE Cast char to decimal "
 	},
 
     "Cast Char to Date free": {
-        "prefix": ["%date free"  ,"char to date free"],
+        "prefix": ["%date"  ,"char to date"],
         "scope": "rpg,rpgle,sqlrpgle",
 
         "body": [
@@ -468,7 +468,7 @@
             "\t//TODO",
 			"endmon;"
 		],
-		"description": "Cast date to decimal "
+		"description": "RPGLE Cast date to decimal "
 	},
 
     // 
@@ -486,7 +486,7 @@
             "\tExceptionData\tChar(3000);",
             "end-ds;$0",
              ],
-        "description": "API Error structure ApiErrC"
+        "description": "RPGLE API Error structure ApiErrC"
     },
 
 
@@ -513,7 +513,7 @@
             "\tErrorCode\t\t\t\t\tlikeds(ApiErrC)\toptions(*nopass:*varsize);",
             "end-pr;$0"
              ],
-        "description": "[All Params]QRCVDTAQ Receive data Queue entry"
+        "description": "RPGLE [All Params]QRCVDTAQ Receive data Queue entry"
     },
 
     "Basic QRCVDTAQ Free": {
@@ -529,7 +529,7 @@
             "\tWaitTime\t\t\tpacked(5:0)\tconst;",
             "end-pr;$0"
              ],
-        "description": "[Basic Params]QRCVDTAQ Receive data Queue entry"
+        "description": "RPGLE [Basic Params]QRCVDTAQ Receive data Queue entry"
     },
 
 
@@ -552,7 +552,7 @@
             "\tIsJournalEntryData\tchar(10)\tconst\toptions(*nopass);",
             "end-pr;$0",
              ],
-        "description": "[All Parms]QSNDDTAQ Send entry to data Queue"
+        "description": "RPGLE [All Parms]QSNDDTAQ Send entry to data Queue"
     },
 
     "QSNDDTAQ Basic Free": {
@@ -567,7 +567,7 @@
             "\tData\t\t\t\t\tchar(65535)\toptions(*varsize);",
             "end-pr;$0",
              ],
-        "description": "[Basic Parms]QSNDDTAQ Send entry to data Queue"
+        "description": "RPGLE [Basic Parms]QSNDDTAQ Send entry to data Queue"
     },
 
 
@@ -591,7 +591,7 @@
   
 
                 ],
-        "description": "[Basic Parms]QSYS2.SEND_DATA_QUEUE"
+        "description": "SQLRPGLE [Basic Parms]QSYS2.SEND_DATA_QUEUE"
     },
     "SEND_DATA_QUEUE   Free": {
         "scope": "sqlrpgle",
@@ -611,7 +611,7 @@
   
 
                 ],
-        "description": "[ALL Parms]QSYS2.SEND_DATA_QUEUE"
+        "description": "SQLRPGLE [ALL Parms]QSYS2.SEND_DATA_QUEUE"
     },
 
 
@@ -635,7 +635,7 @@
   
 
                 ],
-        "description": "[Basic Parms]QSYS2.RECEIVE_DATA_QUEUE"
+        "description": "SQLRPGLE [Basic Parms]QSYS2.RECEIVE_DATA_QUEUE"
     },
 
     "RECEIVE_DATA_QUEUE Free": {
@@ -659,40 +659,40 @@
   
 
                 ],
-        "description": "[ALL Parms]QSYS2.RECEIVE_DATA_QUEUE"
+        "description": "SQLRPGLE [ALL Parms]QSYS2.RECEIVE_DATA_QUEUE"
     },
 
     //--------------------------- DATA AREA ----------------------------------------
 
     "Dataarea Free": {
         "scope": "rpg,rpgle,sqlrpgle",
-        "prefix": ["dcl-s dtaara free","declare dataarea free"],
+        "prefix": ["dcl-s dtaara","declare dataarea"],
         "isFileTemplate": false,
         "body": ["dcl-s ${1:variable}\t${2:char}(${3:1})\tdtaara('${4:data_area}');$0"],
-        "description": "Declare a dataarea"
+        "description": "RPGLE Declare a dataarea"
     },
 
 
 
     "Read Dataarea Free": {
         "scope": "rpg,rpgle,sqlrpgle",
-        "prefix": ["in *lock","Read dataarea free"],
+        "prefix": ["in *lock","Read dataarea"],
         "isFileTemplate": false,
         "body": ["in *lock ${1:variable};$0"],
-        "description": "Read dataarea"
+        "description": "RPGLE Read dataarea"
     },
 
 
     "Write Dataarea Free": {
         "scope": "rpg,rpgle,sqlrpgle",
-        "prefix": ["out","Write dataarea free"],
+        "prefix": ["out","Write dataarea"],
         "isFileTemplate": false,
         "body": ["out ${1:variable};$0"],
-        "description": "Write dataarea"
+        "description": "RPGLE Write dataarea"
     },
     //--------------------------- SQL ----------------------------------------
     "SQL Select": {
-        "prefix": ["Exec SQL select free" ],
+        "prefix": ["Exec SQL select" ],
         "scope": "sqlrpgle",
 
 		"body": ["exec SQL",
@@ -706,13 +706,14 @@
                   "\t//TODO",
                   "endif;",
                   "",
+                  "$0"
 
                 ],
-		"description": "SQL select statement",
+		"description": "SQLRPGLE SQL select statement",
 	},
 
     "SQL Update": {
-        "prefix": ["Exec SQL update free" ],
+        "prefix": ["Exec SQL update" ],
         "scope": "sqlrpgle",
 
 		"body": ["exec SQL",
@@ -723,14 +724,15 @@
                   "if sqlcode <> 0;",
                   "\t//TODO",
                   "endif;",
-                  "",              
+                  "",   
+                  "$0"           
                 ],
-		"description": "SQL update statement",
+		"description": "SQLRPGLE SQL update statement",
 	},
 
     "SQL cursor": {
-        "prefix": ["Exec SQL DECLARE cursor free",],
-		"description": "SQL cursor",
+        "prefix": ["Exec SQL DECLARE cursor",],
+		"description": "SQLRPGLE SQL cursor",
         "scope": "sqlrpgle",
 		"body": [
 			 
@@ -760,6 +762,7 @@
 
 			"EXEC SQL",
 			"  CLOSE @$1;",
+            "$0"
 		]
 	},
 
@@ -770,8 +773,12 @@
 
 		"body": [
                 "EXEC SQL",
-                "\tSet Option DBGView = *Source, CLOSQLCSR = ${1|*ENDMOD,*ENDACTGRP|},DATFMT = *ISO, COMMIT = *NONE;",            
+                "\tSet Option DBGView = *Source,",
+                "\t           CLOSQLCSR = ${1|*ENDMOD,*ENDACTGRP|},",
+                "\t           DATFMT = *ISO,",
+                "\t           COMMIT = *NONE;",
+                "$0"            
                 ],
-		"description": "SQL update statement",
+		"description": "SQLRPGLE SQL update statement",
 	},
 }
