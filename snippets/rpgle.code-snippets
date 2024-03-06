@@ -34,7 +34,7 @@
             "dcl-proc Main; ",
             "\tdcl-pi main;",
             " ",
-            "\tend-pi",
+            "\tend-pi;",
 
             "",
             "\texsr $initialize;",
@@ -109,7 +109,7 @@
             "dcl-proc Main; ",
             "\tdcl-pi main;",
             " ",
-            "\tend-pi",
+            "\tend-pi;",
 
             "",
             "\texsr $initialize;",

@@ -158,7 +158,7 @@
         "body": [
          
             "-- Sql Object Name: ${1:${TM_FILENAME_BASE/([^\\.]+).*/${1:/upcase}/}}",
-            "-- Specific Name  : ${1:${TM_FILENAME_BASE/([^\\.]+).*/${1:/upcase}/}}",
+            "-- Specific Name  : ${2:${TM_FILENAME_BASE/([^\\.]+).*/${1:/upcase}/}}",
             "-- Description    :",
             "-- Created on     :  $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE",
             "-----------------------------------------------------------------------",
@@ -172,10 +172,13 @@
             " RETURNS  ${5:CHAR(20)}" ,                         
             " Language SQL",                           
             " ${6:MODIFIES} SQL DATA",                         
-            " SPECIFIC ${1:${TM_FILENAME_BASE/([^\\.]+).*/${1:/upcase}/}}",
+            " SPECIFIC ${2:${TM_FILENAME_BASE/([^\\.]+).*/${1:/upcase}/}}",
             " No External Action",                                                   
             " NOT DETERMINISTIC",                         
-            " Set Option DBGView = *Source, CLOSQLCSR = ${30|*ENDMOD,*ENDACTGRP|}, COMMIT = *NONE,DATFMT = *ISO",
+            " Set Option DBGView = *Source,",
+            "            CLOSQLCSR = ${30|*ENDMOD,*ENDACTGRP|},",
+            "            COMMIT = *NONE,",
+            "            DATFMT = *ISO",
               
             "  BEGIN",
             ""  ,
