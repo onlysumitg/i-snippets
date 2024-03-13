@@ -2,7 +2,7 @@
   "name": "i-snippets",
   "displayName": "IBM i code Snippets",
   "description": "code snippets for IBM i languages like RPG RPGLE CL CLLE SQL",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "publisher":"Zerobit",
   "icon": "images/isnippet.png",
   "keywords":["IBM i","RPGLE","RPG","SQLRPGLE","CLLE","CL"],

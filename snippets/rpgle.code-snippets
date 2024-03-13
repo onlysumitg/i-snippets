@@ -7,6 +7,7 @@
         "body": [
             "**free",
             "//---------------------------------------------",
+            "// Program.......:${1:${TM_FILENAME_BASE/([^\\.]+).*/${1:/upcase}/}}",
             "// Description...: ",
             "// Creation Date.: $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE",
             "// Create by.....: ",
@@ -19,20 +20,13 @@
             "//---------------------------------------------",
             " ",
             "//---------------------------------------------",
-            "Ctl-opt main(main)",
+            
             " ",
-            "//---------------------------------------------",
-            "// Main program prototype ",
-            "//---------------------------------------------",
-            "dcl-pr Main ExtPgm('${1:${TM_FILENAME_BASE/([^\\.]+).*/${1:/upcase}/}}'); ",
-            " ",
-            "end-pr;",
-            " ",
+         
             "//---------------------------------------------",
             "// Main program interface ",
             "//---------------------------------------------",
-            "dcl-proc Main; ",
-            "\tdcl-pi main;",
+            "\tdcl-pi *n;",
             " ",
             "\tend-pi;",
 
@@ -63,12 +57,12 @@
             "// $finalize: program cleanup",
             "//---------------------------------------------",
             "begsr\t$finalize;",
-			"\t//TODO",
             "\t*InLR = *On;",
+            "\treturn;",
 			"endsr;",            
-            "",
+            "$0",
             
-            "end-proc;$0",
+             
 
         ],
         "description": "Basic template from RPG FREE program"
@@ -81,72 +75,13 @@
         "isFileTemplate": true,
         "body": [
             "**free",
-            "//---------------------------------------------",
-            "// Description...: ",
-            "// Creation Date.: $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE",
-            "// Create by.....: ",
-            "//---------------------------------------------",
-            " ",
-            "//---------------------------------------------",
-            "// Modification logs",
-            "//---------------------------------------------",
-            "// Task     Date     Programmer     Description",
-            "//---------------------------------------------",
-            " ",
-            "//---------------------------------------------",
-            "Ctl-opt main(main)",
-            " ",
-            "//---------------------------------------------",
-            "// Main program prototype ",
-            "//---------------------------------------------",
-            "dcl-pr Main ExtPgm('${1:${TM_FILENAME_BASE/([^\\.]+).*/${1:/upcase}/}}'); ",
-            " ",
-            "end-pr;",
-            " ",
-            "//---------------------------------------------",
-            "// Main program interface ",
-            "//---------------------------------------------",
-            "dcl-proc Main; ",
-            "\tdcl-pi main;",
-            " ",
-            "\tend-pi;",
-
-            "",
-            "\texsr $initialize;",
-            "\texsr $process;",
-            "\texsr $finalize;",
-           
-           
-            "",
-            "//---------------------------------------------",
-            "// $initialize: setup program",
-            "//---------------------------------------------",
-            "begsr\t$initialize;",
-			"\t//TODO",
-			"endsr;",
-
-            "",
-            "//---------------------------------------------",
-            "// $process: main processing logic",
-            "//---------------------------------------------",
-            "begsr\t$process;",
 			"\tdsply 'Hello world!';",
-			"endsr;",
-
-            "",
-            "//---------------------------------------------",
-            "// $finalize: program cleanup",
-            "//---------------------------------------------",
-            "begsr\t$finalize;",
-			"\t//TODO",
             "\t*InLR = *On;",
-			"endsr;",            
-            "",
+            "$0s",
             
-            "end-proc;$0",
 
         ],
-        "description": "Basic template from RPG FREE program"
+        "description": "RPGLE Hello world"
     },
 
 
@@ -304,11 +239,13 @@
         "scope": "rpg,rpgle,sqlrpgle",
 
 		"body": [
+            "",
 			"if\t(${1});",
 			"\t//TODO",
             "else;",
             "\t//TODO",
-            "endif;"
+            "endif;",
+            "$0",
 		],
 		"description": "RPGLE If block"
 	},
@@ -318,9 +255,11 @@
         "scope": "rpg,rpgle,sqlrpgle",
 
 		"body": [
+            "",
 			"dow\t(${1});",
 			"\t$0",
-			"enddo;"
+			"enddo;",
+            ""
 		]
 	},
 	"Dou loop free": {
@@ -329,9 +268,11 @@
         "scope": "rpg,rpgle,sqlrpgle",
 
 		"body": [
+            "",
 			"dou\t(${1});",
 			"\t$0",
-			"enddo;"
+			"enddo;",
+            ""
 		]
 	},
 	"For loop free": {
@@ -340,9 +281,11 @@
         "scope": "rpg,rpgle,sqlrpgle",
 
 		"body": [
+            "",
 			"for\t${1:index} = ${2:startingValue} ${3|to,downto|} ${4:endingValue} by ${5:1};",
 			"\t$0",
-			"endfor;"
+			"endfor;",
+            ""
 		]
 	},
 
@@ -353,12 +296,14 @@
         "scope": "rpg,rpgle,sqlrpgle",
 
 		"body": [
+            "",
 			"select;",
 			"\twhen (${1});",
 			"\t\t$0",
 			"\tother;",
 			"\t\t//TODO",
-			"endsl;"
+			"endsl;",
+            ""
 		]
 	},    
     //--------------------------- RPG prototypes ----------------------------------------
@@ -393,9 +338,13 @@
         "scope": "rpg,rpgle,sqlrpgle",
 
 		"body": [
+            "//---------------------------------------------",
+            "// $1",
+            "//---------------------------------------------",
 			"begsr\t$1;",
-			"\t//TODO",
-			"endsr;"
+			"\t$0",
+			"endsr;",
+            ""
 		],
 		"description": "RPGLE Define subroutine"
 	},
@@ -406,12 +355,14 @@
         "scope": "rpg,rpgle,sqlrpgle",
 
         "body": [
+            "",
 			"monitor;",
-            "\t//TODO",
+            "\t$0",
 			"on-excp '';",
 			"on-error;",
             "\t//TODO",
-			"endmon;"
+			"endmon;",
+            ""
 		],
 		"description": "RPGLE Define monitor Block"
 	},
@@ -446,12 +397,14 @@
         "scope": "rpg,rpgle,sqlrpgle",
 
         "body": [
+            "",
             "monitor;",
             "\t${1:decimal_field}= %dec(${2:char_field}:${3:5}:${4:0});",
 			"on-excp '';",
 			"on-error;",
             "\t${1:decimal_field}=0;",
-			"endmon;"
+			"endmon;",
+            ""
 		],
 		"description": "RPGLE Cast char to decimal "
 	},
@@ -461,12 +414,14 @@
         "scope": "rpg,rpgle,sqlrpgle",
 
         "body": [
+            "",
             "monitor;",
             "\t${1:date_field}= %date(${2:char_field}: ${3|*ISO,*USA|);",
 			"on-excp '';",
 			"on-error;",
             "\t//TODO",
-			"endmon;"
+			"endmon;",
+            ""
 		],
 		"description": "RPGLE Cast date to decimal "
 	},
@@ -478,13 +433,15 @@
         "prefix": ["ApiErrC","Api Error"],
         "isFileTemplate": false,
         "body": [ 
+            "",
             "dcl-ds\tApiErrC\tQualified\tInz;",
             "\tBytesProvided\tInt(10:0)\tInz(%size(ApiErrC));",
             "\tBytesAvailable\tInt(10:0);",
             "\tExceptionID\tChar(7);",
             "\tReserved\tChar(1);",
             "\tExceptionData\tChar(3000);",
-            "end-ds;$0",
+            "end-ds;",
+            "$0"
              ],
         "description": "RPGLE API Error structure ApiErrC"
     },
@@ -495,6 +452,7 @@
         "prefix": ["QRCVDTAQ","dcl-pr QRCVDTAQ"],
         "isFileTemplate": false,
         "body": [ 
+            "",
             "dcl-pr\tQRCVDTAQ\textpgm('QRCVDTAQ');",
             "\tDataQueueName\t\t\tchar(10)\tconst;",
             "\tDataQueueLib\t\t\tchar(10)\tconst;",
@@ -511,7 +469,8 @@
             "\tRemoveMessage\t\t\tchar(10)\tconst\toptions(*nopass);",
             "\tDataReciverSize\t\tpacked(5:0)\tconst\toptions(*nopass);",
             "\tErrorCode\t\t\t\t\tlikeds(ApiErrC)\toptions(*nopass:*varsize);",
-            "end-pr;$0"
+            "end-pr;",
+            "$0"
              ],
         "description": "RPGLE [All Params]QRCVDTAQ Receive data Queue entry"
     },
@@ -521,13 +480,15 @@
         "prefix": ["QRCVDTAQ","dcl-pr QRCVDTAQ"],
         "isFileTemplate": false,
         "body": [ 
+            "",
             "dcl-pr\tQRCVDTAQ\textpgm('QRCVDTAQ');",
             "\tDataQueueName\tchar(10)\tconst;",
             "\tDataQueueLib\tchar(10)\tconst;",
             "\tDataLength\t\tpacked(5:0);",
             "\tData\t\t\t\tchar(65535)\toptions(*varsize);",
             "\tWaitTime\t\t\tpacked(5:0)\tconst;",
-            "end-pr;$0"
+            "end-pr;",
+            "$0"
              ],
         "description": "RPGLE [Basic Params]QRCVDTAQ Receive data Queue entry"
     },
@@ -538,6 +499,7 @@
         "prefix": ["QSNDDTAQ","dcl-pr QSNDDTAQ"],
         "isFileTemplate": false,
         "body": [ 
+            "",
             "dcl-pr\tQSNDDTAQ\textpgm('QSNDDTAQ');",
             "\tDataQueueName\t\t\t\tchar(10)\tconst;",
             "\tDataQueueLib\t\t\t\tchar(10)\tconst;",
@@ -550,7 +512,8 @@
             "\tAsynchronousRequest\tchar(10)\tconst\toptions(*nopass);",
             "\t// opional parm group 3",
             "\tIsJournalEntryData\tchar(10)\tconst\toptions(*nopass);",
-            "end-pr;$0",
+            "end-pr;",
+            "$0"
              ],
         "description": "RPGLE [All Parms]QSNDDTAQ Send entry to data Queue"
     },
@@ -560,12 +523,14 @@
         "prefix": ["QSNDDTAQ","dcl-pr QSNDDTAQ"],
         "isFileTemplate": false,
         "body": [ 
+            "",
             "dcl-pr\tQSNDDTAQ\textpgm('QSNDDTAQ');",
             "\tDataQueueName\tchar(10)\tconst;",
             "\tDataQueueLib\tchar(10)\tconst;",
             "\tDataLength\t\tpacked(5:0);",
             "\tData\t\t\t\t\tchar(65535)\toptions(*varsize);",
-            "end-pr;$0",
+            "end-pr;",
+            "$0",
              ],
         "description": "RPGLE [Basic Parms]QSNDDTAQ Send entry to data Queue"
     },
@@ -578,7 +543,9 @@
         "scope": "sqlrpgle",
         "prefix": ["SEND_DATA_QUEUE","SEND DATA QUEUE"],
         "isFileTemplate": false,
-		"body": ["exec SQL",
+		"body": [   
+                "",
+                 "exec SQL",
                   "\tCALL QSYS2.SEND_DATA_QUEUE(",
                   "\t              DATA_QUEUE => '${2:DataQName}',",
                   "\t              DATA_QUEUE_LIBRARY => '${3:*LIBL}',",
@@ -587,7 +554,8 @@
                   "",
                   "if sqlcode <> 0;",
                   "\t//TODO",
-                  "endif;$0",
+                  "endif;",
+                  "$0",
   
 
                 ],
@@ -597,7 +565,9 @@
         "scope": "sqlrpgle",
         "prefix": ["SEND_DATA_QUEUE","SEND DATA QUEUE"],
         "isFileTemplate": false,
-		"body": ["exec SQL",
+		"body": [
+                "",
+                "exec SQL",
                   "\tCALL QSYS2.SEND_DATA_QUEUE(",
                   "\t              DATA_QUEUE => '${2:DataQName}',",
                   "\t              DATA_QUEUE_LIBRARY => '${3:*LIBL}',",
@@ -607,7 +577,8 @@
                   "",
                   "if sqlcode <> 0;",
                   "\t//TODO",
-                  "endif;$0",
+                  "endif;",
+                  "$0",
   
 
                 ],
@@ -620,7 +591,9 @@
         "scope": "sqlrpgle",
         "prefix": ["RECEIVE_DATA_QUEUE","RECEIVE DATA QUEUE"],
         "isFileTemplate": false,
-		"body": ["exec SQL",
+		"body": [
+                "",
+                "exec SQL",
                   "\tselect MESSAGE_DATA",
                   "\t  into :${1:host_variable}",
                   "\t  from TABLE(QSYS2.RECEIVE_DATA_QUEUE(",
@@ -631,9 +604,8 @@
                   "",
                   "if sqlcode <> 0;",
                   "\t//TODO",
-                  "endif;$0",
-  
-
+                  "endif;",
+                  "$0",
                 ],
         "description": "SQLRPGLE [Basic Parms]QSYS2.RECEIVE_DATA_QUEUE"
     },
@@ -642,7 +614,9 @@
         "scope": "sqlrpgle",
         "prefix": ["RECEIVE_DATA_QUEUE","RECEIVE DATA QUEUE"],
         "isFileTemplate": false,
-		"body": ["exec SQL",
+		"body": [
+                "",
+                "exec SQL",
                   "\tselect MESSAGE_DATA",
                   "\t  into :${1:host_variable}",
                   "\t  from TABLE(QSYS2.RECEIVE_DATA_QUEUE(",
@@ -655,7 +629,8 @@
                   "",
                   "if sqlcode <> 0;",
                   "\t//TODO",
-                  "endif;$0",
+                  "endif;",
+                  "$0",
   
 
                 ],
@@ -692,10 +667,12 @@
     },
     //--------------------------- SQL ----------------------------------------
     "SQL Select": {
-        "prefix": ["Exec SQL select" ],
+        "prefix": ["select" ],
         "scope": "sqlrpgle",
 
-		"body": ["exec SQL",
+		"body": [
+                "",
+                "exec SQL",
                   "\tselect ${1:column}",
                   "\t  into :${1:host_variable}",
                   "\t  from ${2:table_name}",
@@ -713,10 +690,12 @@
 	},
 
     "SQL Update": {
-        "prefix": ["Exec SQL update" ],
+        "prefix": ["update" ],
         "scope": "sqlrpgle",
 
-		"body": ["exec SQL",
+		"body": [
+                "",
+                "exec SQL",
                   "\tupdate ${1:table_name}",
                   "\t   set ${2:column}=:${2:host_variable}",
                   "\t where ${3:where_condition};",
@@ -731,10 +710,11 @@
 	},
 
     "SQL cursor": {
-        "prefix": ["Exec SQL DECLARE cursor",],
+        "prefix": ["DECLARE cursor",],
 		"description": "SQLRPGLE SQL cursor",
         "scope": "sqlrpgle",
 		"body": [
+            "",
 			 
 			"EXEC SQL",
 			"\tDECLARE @$1 CURSOR FOR",
@@ -768,17 +748,72 @@
 
 
     "SQL Set option": {
-        "prefix": ["Exec SQL set option" ],
+        "prefix": ["set option" ],
         "scope": "sqlrpgle",
 
 		"body": [
+            "",
                 "EXEC SQL",
-                "\tSet Option DBGView = *Source,",
+                "\tSet Option DATFMT = *ISO,",
                 "\t           CLOSQLCSR = ${1|*ENDMOD,*ENDACTGRP|},",
-                "\t           DATFMT = *ISO,",
                 "\t           COMMIT = *NONE;",
                 "$0"            
                 ],
 		"description": "SQLRPGLE SQL update statement",
 	},
+
+        //--------------------------- JSON ----------------------------------------
+
+        "SQL Json table from table column": {
+            "prefix": ["json_table" ],
+            "scope": "sqlrpgle",
+    
+            "body": [
+                "",
+
+                    "EXEC SQL",
+                    "\tselect t2.*",
+                    "\t  into :${10:host_variable}",
+                    "\t  from :${20:table_name} as t1",
+                    "\t       JSON_TABLE(${30:t1.column_name},'lax $'",
+                    "\t                 COLUMNS( ",
+                    "\t                          \"${30:field_name}\"  VARCHAR(20) PATH 'lax $.${30:field_name}',",
+                    "\t                        ) as t2;",
+                    "if sqlcode <> 0;",
+                    "\t//TODO",
+                    "endif;",
+                    "$0"            
+                    ],
+            "description": "SQLRPGLE json_table function from table columm",
+        },
+
+        "SQL Json table from variable": {
+            "prefix": ["json_table" ],
+            "scope": "sqlrpgle",
+    
+            "body": [
+                    "",
+
+                    "EXEC SQL",
+                    "$0"            
+                    ],
+            "description": "SQLRPGLE json_table function from variable",
+        },
+
+
+        "SQL Json object": {
+            "prefix": ["json_object" ],
+            "scope": "sqlrpgle",
+    
+            "body": [
+                    "",
+
+                    "EXEC SQL",
+                    "$0"            
+                    ],
+            "description": "SQLRPGLE json_object function",
+        },
+
+
+
 }
